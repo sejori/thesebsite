@@ -1,7 +1,7 @@
 body {
   padding: 20px;
   font-family: Helvetica;
-  background-color: #20262e;
+  background-color: #f1f1f1;
 }
 
 ul {
@@ -12,11 +12,11 @@ ul {
 }
 
 li {
-  background-color: #fff;
   border-radius: 3px;
   font-size: 14px;
   padding: 10px;
   text-align: center;
+  list-style: none;
 }
 
 .footer {
