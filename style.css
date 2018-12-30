@@ -15,14 +15,14 @@ ul {
 
 li {
   border-radius: 3px;
-  font-size: 14px;
   padding: 10px;
   text-align: center;
 }
 
 .footer {
-  text-align: left;
-  font-size: 13px;
-  padding-top: 20px;
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   color: #fff;
 }
