@@ -1,22 +1,27 @@
-.container {
-    display: grid;    
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px 350px 50px;
+body {
+  padding: 20px;
+  font-family: Helvetica;
+  background-color: #20262e;
 }
 
-header {
-    grid-column: span 8;
-		display: flex;
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 10px;
+  margin: 7.5%;
 }
-upper-section {
-    grid-column: span 8;
-		display: flex;
+
+li {
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
 }
-main-section {
-    grid-column: span 12;
-		display: flex;
-}
-footer {
-    grid-column: span 8;
-		display: flex;
+
+.footer {
+  text-align: left;
+  font-size: 13px;
+  padding-top: 20px;
+  color: #fff;
 }
