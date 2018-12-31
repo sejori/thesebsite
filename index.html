@@ -3,43 +3,81 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
   </head>
 
   <body>
     <ul id="header">
-      <li><img src="peace.png" alt="image" width="25%"></li>
-      <li style="text-align: left;">
-        <h1>Seb John Ringrose</h1>
-        <h2>@sejori_</h2>
+      <li>
+        <div class="header-image">
+          <img src="peace.png" alt="image" width="150">
+        </div>
+      </li>
+      <li>
+        <div class="header-text">
+          <h1> Seb John Ringrose </h1>
+          <h2> @sejori_ </h2>
+          <h3> web developer for hire</h2>
+        </div>
        </li>
     </ul>
 
     <ul id="upper-section">
-      <li><img src="" alt="product hunt"></li>
-      <li><img src="" alt="email"></li>
-      <li style="grid-column: span 4;">
-        <p>BIO</p>
+      <li>
+        <a href="https://www.producthunt.com/sejori">
+          <i class="fab fa-product-hunt"></i>
+        </a>
       </li>
-      <li><img src="" alt="shipstream"></li>
-      <li><img src="" alt="telegram"></li>
+      <li>
+        <a href="mailto:sebringrose@gmail.com">
+          <i class="far fa-envelope"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.twitch.com/sejori">
+          <i class="fab fa-twitch"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/joinchat/LHLX1RdCt_c72sXCed3Qiw">
+          <i class="fab fa-telegram"></i>
+        </a>
+      </li>
     </ul>
 
     <ul id="main-section">
-      <li><img src="" alt="youtube"></li>
-      <li><img src="" alt="twitter"></li>
-      <li><img src="" alt="github"></li>
+      <li style="grid-column: span 2;">
+        <ul id="inner">
+          <li>
+            <a href="https://www.youtube.com/channel/UC7NS4JUvna3X42fLkrKedmw">
+              <i class="fab fa-youtube"><span class="fa-icon-inner-text">&nbsp;YouTube</span></i>
+            </a>
+            <iframe src="https://www.youtube.com/embed/-oS19KshdlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li>
+            <p>Other stuff coming soon, I guess. Ugh... look at my tweets though! -> </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <i class="fab fa-twitter"></i>
+        <a class="twitter-timeline" data-width="300" href="https://twitter.com/sejori_">@sejori_</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </li>
     </ul>
 
-    <div id="footer">
-      <div style="text-align: left;">
-        <p>This.</p>
-      </div>
-      <div style="text-align: center;">
+    <ul id="footer">
+      <li style="text-align: left;">
+        This.
+      </li>
+      <li style="text-align: center;">
         Is.
-      </div>
-      <div style="text-align: right;">
-        Not Sparta.
-      </div>
+      </li>
+      <li style="text-align: right;">
+        Not Sparta... it's the internet.
+      </li>
+    </ul>
     </div>
 
   </body>
