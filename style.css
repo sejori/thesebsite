@@ -2,7 +2,6 @@ body {
   font-family: Helvetica;
   background-color: #whitesmoke;
   margin: 0;
-  padding: 30px;
   color: white;
 }
 
@@ -10,12 +9,12 @@ h1 { color: lightgrey; font-size: 25px; margin: 0; text-decoration: underline; }
 h2 { color: orange; font-size: 20px; margin: 0; text-decoration: underline; }
 h3 { color: lightblue; font-size: 15px; margin: 0; text-decoration: underline; }
 i { color: pink; font-size: 40px; }
-iframe { width: 90%; height: 330px; margin: 10px; }
+iframe { width: 90%; height: 330px; margin: 10px; align-self: center; }
 .fa-icon-inner-text { font-family: Helvetica; color: white; }
 
 ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  display: flex;
+  justify-content: center;
   margin: 0;
   list-style: none;
   padding-inline-start: 0px;
@@ -24,19 +23,14 @@ ul {
 li {
   text-align: center;
   padding: 10px;
-}
-
-ul#main-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  margin: 0;
-  list-style: none;
-  padding-inline-start: 0px;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 ul#inner {
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -48,12 +42,12 @@ ul#inner li {
   margin: 10px;
 }
 
-ul#footer {
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  width: 100%;
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  color: white;
   background-color: lightgrey;
 }
 
@@ -68,9 +62,10 @@ ul#footer {
 }
 
 .header-text {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: left;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
 }
