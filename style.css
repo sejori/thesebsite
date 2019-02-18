@@ -10,7 +10,7 @@ h2 { color: orange; font-size: 20px; margin: 0; text-decoration: underline; }
 h3 { color: lightblue; font-size: 15px; margin: 0; text-decoration: underline; }
 i { color: pink; font-size: 40px; }
 iframe { width: 90%; height: 330px; margin: 10px; align-self: center; }
-.fa-icon-inner-text { font-family: Helvetica; color: white; }
+.fa-icon-inner-text { font-family: Helvetica; color: white;  font-weight: normal; }
 
 ul {
   display: flex;
