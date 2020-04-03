@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" href="/css/nav.css">
         <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="/css/list.css">
         <link rel="stylesheet" href="/css/minty.css">
         <link rel="stylesheet" href="/css/hamburgers.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -94,9 +95,9 @@
                     
 <div class="container">
     <h1>My amazing writings:</h1>
-    <ul><li><a href="/blog/blogpost/">First post woo!</a></li></ul>
     <p>howdiedoodie</p>
 
+    <ul id="blog-posts"><li><a href="/blog/blogpost/">First post woo!</a><span> - Fri Apr 03 2020 19:08:02 GMT+0100 (British Summer Time)</span></li></ul>
 </div>
 
                 </main>
@@ -128,19 +129,25 @@
                 enableDarkMode()
                 document.querySelector("#dark-mode-toggle").checked = true
             }
+            if (window.innerWidth < 400) {
+                console.log('mobile')
+                toggleMenu()
+            }
+
+            function toggleMenu() {
+                const sidebar = document.querySelector("#sidebar") 
+                sidebar.classList.toggle("active")
+                if (!sidebar.classList.contains("active")) { 
+                    sidebar.style.marginLeft = (window.innerWidth < 400) ? -window.innerWidth + "px" : "-400px"
+                } else sidebar.style.marginLeft = 0
+                navButton.classList.toggle("inserted")
+                navButton.classList.toggle("is-active")
+            }
 
             window.addEventListener("load", () => {
                 // nav toggle listener
                 const navButton = document.querySelector("#nav-button")
-                navButton.addEventListener("click", () => {
-                    const sidebar = document.querySelector("#sidebar") 
-                    sidebar.classList.toggle("active")
-                    if (!sidebar.classList.contains("active")) { 
-                        sidebar.style.marginLeft = (window.innerWidth < 400) ? -window.innerWidth + "px" : "-400px"
-                    } else sidebar.style.marginLeft = 0
-                    navButton.classList.toggle("inserted")
-                    navButton.classList.toggle("is-active")
-                })
+                navButton.addEventListener("click", toggleMenu)
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")

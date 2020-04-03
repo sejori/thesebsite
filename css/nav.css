@@ -21,6 +21,7 @@ body {
     box-shadow: none;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 #sidebar i {
     margin: auto 0;
