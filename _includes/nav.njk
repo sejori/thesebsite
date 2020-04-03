@@ -23,55 +23,57 @@
                     &nbsp;&nbsp;
                     <i class="fas fa-user-ninja fa-lg"></i>
                 </div>
-                <h1 id="crown">👑</h1>
-                <img id="profile-pic" src="assets/peace.png">
-                <h3>Sebastien Ringrose</h3>
-                <ul id="profile-links" class="row">
-                    <li>
-                        <a target="_blank" href="https://github.com/sejori">
-                            <i class="fab fa-github fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://linkedin.com/in/sebastien-ringrose-375047134">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.instagram.com/sebastienringrose/">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://theempire.dev/">
-                            <i class="fas fa-comment-dollar fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="mailto:seb@thesebsite.com">
-                            <i class="fas fa-at fa-2x"></i>
-                        </a>
-                    </li>
-                </ul>
+                <div id="profile">
+                    <h1 id="crown">👑</h1>
+                    <img id="profile-pic" src="assets/peace.png">
+                    <h3>Sebastien Ringrose</h3>
+                    <ul id="profile-links" class="row">
+                        <li>
+                            <a target="_blank" href="https://github.com/sejori">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://linkedin.com/in/sebastien-ringrose-375047134">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.instagram.com/sebastienringrose/">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://theempire.dev/">
+                                <i class="fas fa-comment-dollar fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="mailto:seb@thesebsite.com">
+                                <i class="fas fa-at fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <ul id="nav-links" class="nav nav-pills flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="/">
-                            <h3>🏠&nbsp;&nbsp;&nbsp;Home</h3>
+                            <h4>🏠&nbsp;&nbsp;&nbsp;Home</h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/projects">
-                            <h3>🚀&nbsp;&nbsp;&nbsp;Projects</h3>
+                            <h4>🚀&nbsp;&nbsp;&nbsp;Projects</h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/blog">
-                            <h3>✍️&nbsp;&nbsp;&nbsp;Blog</h3>
+                            <h4>✍️&nbsp;&nbsp;&nbsp;Blog</h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/blog">
-                            <h3>📇&nbsp;&nbsp;&nbsp;About</h3>
+                            <h4>📇&nbsp;&nbsp;&nbsp;About</h4>
                         </a>
                     </li>
                 </ul>
@@ -128,9 +130,7 @@
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")
-                Array.from(navLinks.children).forEach(link => {
-                    if (link.href === window.location.pathname) link.classList.toggle("active")
-                })
+                Array.from(navLinks.children).forEach(link =>  (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
 
                 // dark mode toggel listener
                 document.querySelector("#dark-mode-toggle").addEventListener("click", (e) => {
