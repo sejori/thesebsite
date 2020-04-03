@@ -112,6 +112,16 @@
                 document.body.classList.toggle("dark-mode")
                 window.localStorage.setItem("darkmode", false)
             }
+            /* Randomize array in-place using Durstenfeld shuffle algorithm */
+            function shuffleArray(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array
+            }
             if (window.localStorage.getItem("darkmode") === "true") {
                 enableDarkMode()
                 document.querySelector("#dark-mode-toggle").checked = true
@@ -132,16 +142,38 @@
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")
-                console.log(navLinks)
                 Array.from(navLinks.children[0].children).forEach(link => (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
 
-                // dark mode toggel listener
+                // dark mode toggle listener
                 document.querySelector("#dark-mode-toggle").addEventListener("click", (e) => {
                     if (e.target.checked) { 
                         enableDarkMode()
                     } else disableDarkMode()
                     return location.reload()
                 })
+            })
+        </script>
+        <script>
+            // HATS!!!
+            let crown = document.querySelector("#crown")
+            let profilePic = document.querySelector("#profile-pic")
+            profilePic.addEventListener("click", () => {
+                let hatz = [ "👑", "🎓", "🎊", "⛑️", "🧢", "🎩", "👒", "🎀", "👑", "🎓", "🎊", "⛑️", "🧢", "🎩", "👒", "🎀", "👑", "🎓", "🎊", "⛑️", "🧢", "🎩", "👒", "🎀", "💩" ]
+                let hatzSpeed = 70
+                let hatzIndex = 0
+                hatz = shuffleArray(hatz)
+                if (crown.style.display !== "block") crown.style.display = "block"
+                function hatzLoop () {
+                    setTimeout(function () {
+                        crown.textContent = hatz[hatzIndex]
+                        hatzIndex++
+                        hatzSpeed = hatzSpeed * 1.1
+                        if (hatzIndex < hatz.length) {
+                            hatzLoop()
+                        }
+                    }, hatzSpeed)
+                }
+                hatzLoop()
             })
         </script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

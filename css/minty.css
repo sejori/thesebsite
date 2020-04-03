@@ -67,20 +67,20 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #222;
+  color: #17202a;
   text-align: left;
-  background-color: whitesmoke
+  background-color: #fef5e7;
 }
 body .hamburger-inner, body .hamburger-inner::before, body .hamburger-inner::after, body .hamburger.is-active .hamburger-inner, body .hamburger.is-active body .hamburger-inner::before, body .hamburger.is-active .hamburger-inner::after {
-  background-color: #222 !important;
+  background-color: #17202a !important;
 }
 
 body.dark-mode {
-  color: whitesmoke;
-  background-color: #222222;
+  color: #fef5e7;
+  background-color: #17202a;
 }
 body.dark-mode .hamburger-inner, body.dark-mode .hamburger-inner::before, body.dark-mode .hamburger-inner::after, body.dark-mode .hamburger.is-active .hamburger-inner, body.dark-mode .hamburger.is-active .hamburger-inner::before, body.dark-mode .hamburger.is-active .hamburger-inner::after {
-  background-color: whitesmoke !important;
+  background-color: #fef5e7 !important;
 }
 
 

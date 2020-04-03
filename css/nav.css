@@ -43,6 +43,7 @@ body {
 }
 #crown {
     margin-top: -2rem;
+    display: none;
 }
 #profile-pic {
     width: 170px;
