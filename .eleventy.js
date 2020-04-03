@@ -5,7 +5,7 @@ module.exports = function(eleventyConfig) {
     return {
         passthroughFileCopy: true,
         dir: {
-            output: "public"
+            output: "docs"
         }
     };
 }
