@@ -5,12 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <link rel="icon" href="assets/favicon.ico"> 
+        <link rel="icon" href="/assets/favicon.ico"> 
         <title>{{ title }}</title>
         <meta name="description" content="{{ description }}">
 
         <link rel="stylesheet" href="/css/nav.css">
-        <link rel="stylesheet" href="/css/flatly.css">
+        <link rel="stylesheet" href="/css/page.css">
+        <link rel="stylesheet" href="/css/minty.css">
         <link rel="stylesheet" href="/css/hamburgers.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
@@ -25,7 +26,7 @@
                 </div>
                 <div id="profile">
                     <h1 id="crown">👑</h1>
-                    <img id="profile-pic" src="assets/peace.png">
+                    <img id="profile-pic" src="/assets/peace.png">
                     <h3>Sebastien Ringrose</h3>
                     <ul id="profile-links" class="row">
                         <li>
@@ -55,28 +56,30 @@
                         </li>
                     </ul>
                 </div>
-                <ul id="nav-links" class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <h4>🏠&nbsp;&nbsp;&nbsp;Home</h4>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/projects">
-                            <h4>🚀&nbsp;&nbsp;&nbsp;Projects</h4>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">
-                            <h4>✍️&nbsp;&nbsp;&nbsp;Blog</h4>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">
-                            <h4>📇&nbsp;&nbsp;&nbsp;About</h4>
-                        </a>
-                    </li>
-                </ul>
+                <div id="nav-links">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <h4>🏠&nbsp;&nbsp;&nbsp;Home</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects/">
+                                <h4>🚀&nbsp;&nbsp;&nbsp;Projects</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog/">
+                                <h4>✍️&nbsp;&nbsp;&nbsp;Blog</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/">
+                                <h4>📇&nbsp;&nbsp;&nbsp;About</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
             {% endblock %}
 
@@ -97,17 +100,11 @@
         <script>
             // change theme if darkmode
             function enableDarkMode () {
-                let styleLink = document.createElement("link")
-                styleLink.rel = "stylesheet"
-                styleLink.href = "css/darkly.css"
-                document.head.appendChild(styleLink)
+                document.body.classList.toggle("dark-mode")
                 window.localStorage.setItem("darkmode", true)
             }
             function disableDarkMode () {
-                let styleLink = document.createElement("link")
-                styleLink.rel = "stylesheet"
-                styleLink.href = "css/flatly.css"
-                document.head.appendChild(styleLink)
+                document.body.classList.toggle("dark-mode")
                 window.localStorage.setItem("darkmode", false)
             }
             if (window.localStorage.getItem("darkmode") === "true") {
@@ -130,7 +127,8 @@
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")
-                Array.from(navLinks.children).forEach(link =>  (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
+                console.log(navLinks)
+                Array.from(navLinks.children[0].children).forEach(link => (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
 
                 // dark mode toggel listener
                 document.querySelector("#dark-mode-toggle").addEventListener("click", (e) => {

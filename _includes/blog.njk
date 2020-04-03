@@ -1,0 +1,13 @@
+---
+layout: nav.njk
+---
+
+<div class="container">
+    <h1>{{ listName }}</h1>
+    <ul>
+        {%- for post in collections.blogpost -%}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+        {%- endfor -%}
+    </ul>
+    {{ content | safe }}
+</div>
