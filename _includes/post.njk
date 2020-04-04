@@ -12,5 +12,8 @@ layout: nav.njk
         <li class="breadcrumb-item active"><a href="{{ eleventyNavigation.url }}">{{ eleventyNavigation.key }}</a></li>
     </ol>
     {% endif %}
+    {% if picture %}
+    <img id="banner" src="{{ picture }}" alt="{{ picAlt }}" />
+    {% endif %}
     {{ content | safe }}
 </div>
