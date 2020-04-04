@@ -7,10 +7,14 @@ main {
 }
 
 main > .container {
-    margin: 5rem 0;
-} 
+    margin: 8rem auto;
+}
+
+main h1, main h2, main h3, main h4 {
+    margin: 2rem 0 1rem;
+}
 
 main > .container > #banner {
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 } 
