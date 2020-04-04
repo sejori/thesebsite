@@ -94,6 +94,11 @@
                 <main>
                     
 <div class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active">Data</li>
+    </ol>
     <p>this is a post</p>
 
 </div>
@@ -128,11 +133,11 @@
                 document.querySelector("#dark-mode-toggle").checked = true
             }
             if (window.innerWidth < 400) {
-                console.log('mobile')
                 toggleMenu()
             }
 
             function toggleMenu() {
+                const navButton = document.querySelector("#nav-button")
                 const sidebar = document.querySelector("#sidebar") 
                 sidebar.classList.toggle("active")
                 if (!sidebar.classList.contains("active")) { 
@@ -149,14 +154,17 @@
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")
-                Array.from(navLinks.children[0].children).forEach(link => (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
+                Array.from(navLinks.children[0].children).forEach(link => {
+                    let linkRoute = link.children[0].href.split("/")[3]
+                    let currentRoute = window.location.pathname.split("/")[1]
+                    return (linkRoute === currentRoute && link.children[0].classList.toggle("active"))
+                })
 
                 // dark mode toggle listener
                 document.querySelector("#dark-mode-toggle").addEventListener("click", (e) => {
                     if (e.target.checked) { 
                         enableDarkMode()
                     } else disableDarkMode()
-                    return location.reload()
                 })
             })
         </script>

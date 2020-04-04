@@ -20,10 +20,11 @@
         <div class="wrapper">
             
             <nav id="sidebar" class="active">
-                <div id="dark-mode-div" class="row">
-                    <input id="dark-mode-toggle" name="dark-mode-toggle" type="checkbox" />
-                    &nbsp;&nbsp;
-                    <i class="fas fa-user-ninja fa-lg"></i>
+                <div id="dark-mode-div" class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="dark-mode-toggle" name="dark-mode-toggle" checked="false">
+                        <label class="custom-control-label" for="dark-mode-toggle"><i class="fas fa-user-ninja fa-lg"></i></label>
+                    </div>
                 </div>
                 <div id="profile">
                     <h1 id="crown">👑</h1>
@@ -94,12 +95,11 @@
                 <main>
                     
 <div class="container">
-    <h1>My amazing projects:</h1>
-    <ul><li><a href="/projects/project/">First project woo!</a></li></ul>
+    <h1>My amazing projects</h1>
     <p>howdiedoodie</p>
 
+    <ul id="project-posts"><li><a href="/projects/fist-project/">First project - This Website!</a><span> - Fri Apr 03 2020 19:08:41 GMT+0100 (British Summer Time)</span></li></ul>
 </div>
-
                 </main>
             </div>
             
@@ -127,14 +127,14 @@
             }
             if (window.localStorage.getItem("darkmode") === "true") {
                 enableDarkMode()
-                document.querySelector("#dark-mode-toggle").checked = true
+                document.querySelector("#dark-mode-toggle").checked = "true"
             }
             if (window.innerWidth < 400) {
-                console.log('mobile')
                 toggleMenu()
             }
 
             function toggleMenu() {
+                const navButton = document.querySelector("#nav-button")
                 const sidebar = document.querySelector("#sidebar") 
                 sidebar.classList.toggle("active")
                 if (!sidebar.classList.contains("active")) { 
@@ -151,14 +151,17 @@
 
                 // set active nav link
                 let navLinks = document.querySelector("#nav-links")
-                Array.from(navLinks.children[0].children).forEach(link => (link.children[0].href === window.location.href) && link.children[0].classList.toggle("active"))
+                Array.from(navLinks.children[0].children).forEach(link => {
+                    let linkRoute = link.children[0].href.split("/")[3]
+                    let currentRoute = window.location.pathname.split("/")[1]
+                    return (linkRoute === currentRoute && link.children[0].classList.toggle("active"))
+                })
 
                 // dark mode toggle listener
                 document.querySelector("#dark-mode-toggle").addEventListener("click", (e) => {
                     if (e.target.checked) { 
                         enableDarkMode()
                     } else disableDarkMode()
-                    return location.reload()
                 })
             })
         </script>

@@ -3,5 +3,14 @@ layout: nav.njk
 ---
 
 <div class="container">
+    {% if eleventyNavigation and eleventyNavigation.key and eleventyNavigation.parent %}
+    <ol class="breadcrumb secondary">
+        {% set navPages = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+        {%- for page in navPages -%}
+        <li class="breadcrumb-item"><a href="{{ page.url }}">{{ page.key }}</a></li>
+        {%- endfor -%}
+        <li class="breadcrumb-item active"><a href="{{ eleventyNavigation.url }}">{{ eleventyNavigation.key }}</a></li>
+    </ol>
+    {% endif %}
     {{ content | safe }}
 </div>

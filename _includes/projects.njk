@@ -4,10 +4,10 @@ layout: nav.njk
 
 <div class="container">
     <h1>{{ listName }}</h1>
-    <ul>
-        {%- for project in collections.project -%}
-        <li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
+    {{ content | safe }}
+    <ul id="project-posts">
+         {%- for project in collections.project -%}
+        <li><a href="{{ project.url }}">{{ project.data.title }}</a><span> - {{ project.date.toString() }}</span></li>
         {%- endfor -%}
     </ul>
-    {{ content | safe }}
 </div>

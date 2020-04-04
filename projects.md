@@ -1,8 +1,10 @@
 ---
-title: "Projects"
+title: Projects
 layout: projects.njk
-listName: "My amazing projects:"
+listName: My amazing projects
 type: project
+eleventyNavigation:
+    key: Projects
 ---
 
 howdiedoodie
