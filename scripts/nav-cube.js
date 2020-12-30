@@ -49,10 +49,10 @@ const rollCells = async (cube, cells, cellData, cellOrder) => {
 const cheatsheet = () => {
   const modal = cre8modal()
   const heading = cre8("h1", { textContent: "Cube Nav cheatsheet" }, modal)
-  const text1 = cre8("p", { textContent: "Looks like you're new here. Not to worry, getting around is simple. All you need to do is input shapes into the magical NavCube." }, modal)
+  const text1 = cre8("p", { textContent: "Looks like you're new here. Not to worry, getting around is simple. All you need to do is input shapes into the magical NavCube by tapping on the squares." }, modal)
   const text2 = cre8("p", { textContent: "Is the NavCube really magical? Well, if a cube that transports you around the internet isn't magic then I don't know what is." }, modal)
-  const text3 = cre8("p", { textContent: "But what shapes should you create? Maybe your heart would be a good place to start." }, modal)
-  const text4 = cre8("p", { textContent: "hint: start with the bottom and side edges, then turn it into a heart with the top squares..." }, modal)
+  const text3 = cre8("p", { textContent: "But what shapes should you create? Maybe your heart would be a good place to start. After that, you'll find hints at the bottom of each page you find - good luck!" }, modal)
+  const text4 = cre8("p", { textContent: "hint: for this first shape start with only the bottom and side edges filled in, then complete the shape with 5 top squares..." }, modal)
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
