@@ -1,37 +1,10 @@
-Welcome to Glitch
+# Seb Ringrose's Professional Services Website
 =================
+Designer. Developer. Business Consultant & Professional Tutor.
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+Built in good ol' HTML, CSS & Vanilla JavaScript. No NPM libraries and some hella interesting code that you should definitely check out. Have a go at the puzle on the site and let me know if you can solve it! Don't cheat now (looking at you fellow devs) ;)
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-### ← README.md
-
-That's this file, where you can tell people what your cool website does and how you built it.
-
-### ← index.html
-
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
-
-### ← script.js
-
-If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-### ← assets
-
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
+Hosted on [Glitch](https://glitch.com/)
 -------------------
 
 \ ゜o゜)ノ
