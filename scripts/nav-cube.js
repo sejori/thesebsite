@@ -46,14 +46,6 @@ const rollCells = async (cube, cells, cellData, cellOrder) => {
   }
 }
 
-const cheatsheet = () => {
-  const modal = cre8modal()
-  const _heading = cre8("h2", { textContent: "Cube Nav cheatsheet" }, modal)
-  const _text1 = cre8("p", { textContent: "All you need to do is input shapes into the magical NavCube by clicking/tapping the tiles." }, modal)
-  const _text2 = cre8("p", { textContent: "Is the NavCube really magical? Well, if a cube that transports you around the internet isn't magic then I don't know what is." }, modal)
-  const _text3 = cre8("p", { textContent: "hint: Always follow your heart. Start with the bottom and side edges, then turn it into a heart with the top squares..." }, modal)
-}
-
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
   if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
     if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
@@ -91,5 +83,3 @@ const openingCellOrder = [
   [1, 7]
 ]
 rollCells(cube, cells, cellData, openingCellOrder)
-
-if (window.location.pathname === "/") document.querySelector("#cheatsheet").addEventListener("click", cheatsheet)

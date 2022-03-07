@@ -22,8 +22,8 @@ const cellCodes = [
     ],
     action: () => {
       const modal = cre8modal()
-      const text1 = cre8("p", { textContent: "Haha - you know my inspiration." }, modal)
-      const text2 = cre8("p", { textContent: "What's your favourite game console? Find my about page and you'll be able to email me your answer!" }, modal)
+      const text1 = cre8("p", { textContent: "Well done - you know my inspiration!" }, modal)
+      const text2 = cre8("p", { textContent: "What's your favourite game console? Find my about page and you'll be able to email me your answer :)" }, modal)
     }, 
   },
   {
@@ -68,10 +68,10 @@ const cellCodes = [
     ],
     action: () => {
       let modal = cre8modal()
-      let heading = cre8("h1", { textContent: "Hint:" }, modal)
+      let heading = cre8("h1", { textContent: "hint:" }, modal)
       let text1 = cre8("p", { textContent: "If you know anything about websites you might know that I've used JavaScript to programme the magical NavCube. Boy oh boy do I love me some JavaScript." }, modal)
       let text2 = cre8("p", { textContent: "But JavaScript wouldn't be here without it's low-level and syntactically similar ancestor." }, modal)
-      let text3 = cre8("p", { textContent: "Hint: draw the letter..." }, modal)
+      let text3 = cre8("p", { textContent: "hint: Draw the letter..." }, modal)
     }
   },
   {
