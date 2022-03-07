@@ -1,5 +1,4 @@
 # Seb Ringrose's Professional Services Website
-===
 
 Designer. Developer. Business Consultant & Professional Tutor.
 
