@@ -68,10 +68,10 @@ const cellCodes = [
     ],
     action: () => {
       let modal = cre8modal()
-      let heading = cre8("h1", { textContent: "hint:" }, modal)
+      let heading = cre8("h1", { textContent: "Nicely Done!" }, modal)
       let text1 = cre8("p", { textContent: "If you know anything about websites you might know that I've used JavaScript to programme the magical NavCube. Boy oh boy do I love me some JavaScript." }, modal)
-      let text2 = cre8("p", { textContent: "But JavaScript wouldn't be here without it's low-level and syntactically similar ancestor." }, modal)
-      let text3 = cre8("p", { textContent: "hint: Draw the letter..." }, modal)
+      let text2 = cre8("p", { textContent: "But JavaScript wouldn't be here without it's low-level and syntactically similar ancestral programming language." }, modal)
+      let text3 = cre8("p", { innerHTML: "<b>hint:</b> Draw the name (or letter) of the language in the middle of the NavCube..." }, modal)
     }
   },
   {
