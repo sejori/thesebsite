@@ -21,9 +21,10 @@ const cellCodes = [
       ]
     ],
     action: () => {
-      const modal = cre8modal()
-      const text1 = cre8("p", { textContent: "Aha! You know my inspiration - the GameCube!" }, modal)
-      const text2 = cre8("p", { textContent: "What's your favourite games console? Find my about page and you'll be able to email me your answer ^^" }, modal)
+      const modal = cre8("div", { className: "fade-out fullscreen row align-center justify-center" }, document.body)
+      const speech = cre8("div", { style: "border-bottom: 1px bluevoilet, padding-left: 100px" }, modal)
+      const text1 = cre8("p", { textContent: "You found my inspiration - the GameCube!" }, speech)
+      const text2 = cre8("p", { textContent: "Games and websites were how I learned to code. Now I'm also interested in IT Security, AI and Robotics." }, modal)
     }, 
   },
   {

@@ -11,7 +11,9 @@ footer { padding: 1rem; background-color: white; }
 .royalblue { color: royalblue; }
 
 /* General classes */
-.fullscreen { min-height: 100vh; min-width: 100vw; }
+.fullscreen { position: absolute; top: 0; left: 0; min-height: 100vh; min-width: 100vw; }
+.full-width: { min-width: 100vw; }
+.full-height: { min-height: 100vh; }
 .container { margin: auto; margin: auto; padding: 1rem; max-width: 950px; }
 .column { display: flex; flex-direction: column; }
 .row { display: flex; }
@@ -70,5 +72,16 @@ footer { padding: 1rem; background-color: white; }
   }
   100% {
     opacity: 1;
+  }
+}
+.fade-out {
+  animation: fade-out 1s ease;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
