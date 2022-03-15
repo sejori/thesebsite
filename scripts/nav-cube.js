@@ -47,35 +47,19 @@ const rollCells = async (cube, cells, cellData, cellOrder) => {
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
-  let match = false
   
-  // some codes have two successful shapes
-  if (cellCode.code && cellCode.alternateCode) {
-    // first make sure top matches then do left then right
-    if (cellData[0].every((cell, i) => cell === cellCode.code[0][i]) || cellData[0].every((cell, i) => cell === cellCode.alternateCode[0][i])) {
-      if (cellData[1].every((cell, i) => cell === cellCode.code[1][i]) || cellData[0].every((cell, i) => cell === cellCode.alternateCode[1][i])) {
-        if (cellData[2].every((cell, i) => cell === cellCode.code[2][i]) || cellData[0].every((cell, i) => cell === cellCode.alternateCode[2][i])) {
-          match = true
-        }
+  // first make sure top matches then do left then right
+  if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
+    if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
+      if (cellData[2].every((cell, i) => cell === cellCode.code[2][i])) {
+        cube.classList.toggle("bounce-in")
+        new Promise(res => setTimeout(res, 500)).then(() => {
+          cellCode.action()
+          cube.classList.toggle("bounce-in")
+        })
       }
     }
-  } else {
-    if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
-      if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
-        if (cellData[2].every((cell, i) => cell === cellCode.code[2][i])) {
-          match = true
-        }
-      }
-    }
-  }
-  
-  if (match) {
-    cube.classList.toggle("bounce-in")
-    new Promise(res => setTimeout(res, 500)).then(() => {
-      cellCode.action()
-      cube.classList.toggle("bounce-in")
-    })
-  }      
+  }    
 })
 
 const cube = document.querySelector("#nav-cube")
