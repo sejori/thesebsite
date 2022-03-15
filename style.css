@@ -18,6 +18,8 @@ footer { padding: 1rem; background-color: white; }
 .bg-secondary { background-color: white; }
 .tomato { color: var(--orange); }
 .royalblue { color: var(--deepblue); }
+.didot { font-family: Didot, serif; }
+.bold { font-weight: 600; }
 
 /* General classes */
 .fullscreen { position: absolute; top: 0; left: 0; min-height: 100vh; min-width: 100vw; }
