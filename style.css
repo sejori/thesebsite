@@ -17,6 +17,7 @@ header { margin: 1rem; }
 footer { padding: 1rem; background-color: white; }
 .bg-secondary { background-color: white; }
 .tomato { color: var(--orange); }
+.pink { color: var(--pink); }
 .royalblue { color: var(--deepblue); }
 .didot { font-family: Didot, serif; }
 .bold { font-weight: 600; }
