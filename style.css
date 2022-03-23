@@ -35,10 +35,11 @@ footer { padding: 1rem; background-color: white; }
 .modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border-radius: 1rem; padding: 1rem; z-index: 5; width: 60%; max-width: 80%; max-height: 80%; overflow: scroll; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); }
 .modal-close { align-self: flex-end; height: 2rem; cursor: pointer; }
 .link { border: none; background-color: none; color: var(--pink); cursor: pointer; }
-.header-logo { height: 5rem; width: 5rem; }
+.header-logo { height: 5rem; width: 5rem; transition: all 0.5s ease-out; }
 .align-self-center { align-self: center; }
 .circle { border-radius: 50% }
-.icon { width: 2rem; height: 2rem; margin: 1rem; color: var(--deepblue); }
+.icon { width: 2rem; height: 2rem; margin: 1rem 0.5rem; color: var(--deepblue); }
+.text-icon { font-size: 2rem; display: flex; align-items: center; }
 .text-center { text-align: center; }
 
 /* Loading Cube stuffs */
@@ -47,7 +48,7 @@ footer { padding: 1rem; background-color: white; }
 .cube-top-pane { width: 56%; height: 56%; left: 25%; top: 0%; transform: rotate(45deg) skew(165deg, 165deg); }
 .cube-left-pane { width: 50%; height: 50%; left: 3%; top: 42.5%; transform: skew(180deg, 210deg); }
 .cube-right-pane { width: 50%; height: 50%; left: 53%; top: 42.5%; transform: skew(180deg, 150deg); }
-.pane .cell { transition: all 0.1s ease-out; box-sizing: border-box; border: 1px solid whitesmoke; }
+.pane .cell { transition: all 0.1s ease-out; box-sizing: border-box; border: 1px solid whitesmoke; cursor: pointer; }
 .pane .highlighted { background-color: var(--purple); }
 
 /* Animations */
