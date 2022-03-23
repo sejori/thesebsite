@@ -47,6 +47,8 @@ const rollCells = async (cube, cells, cellData, cellOrder) => {
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
+  
+  // first make sure top matches then do left then right
   if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
     if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
       if (cellData[2].every((cell, i) => cell === cellCode.code[2][i])) {
@@ -57,7 +59,7 @@ const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => 
         })
       }
     }
-  }
+  }    
 })
 
 const cube = document.querySelector("#nav-cube")

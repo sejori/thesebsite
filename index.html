@@ -7,7 +7,7 @@
 
     <title>The Sebsite</title>
     <link rel="icon" type="image/png" href="https://cdn.glitch.global/c6105e1b-a9b3-4476-aaa7-a405a4ef71a6/favicon.png?v=1646679373880">
-    <meta name="description" content="Seb Ringrose - Designer, Developer, Business Consultant & Professional Tutor.">
+    <meta name="description" content="Seb Ringrose - Designer, Developer, Consultant & Tutor.">
     
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
@@ -17,14 +17,22 @@
     <script src="/scripts/nav-cube.js" type="module" defer></script>
   </head>  
   <body>
-    <div class="fullscreen column justify-center">
+<!--     <header style="position: absolute;" class="row justify-between">
+      <div class="header-logo">
+        <img src="/icons/javascript.svg">
+        <img src="/icons/html5.svg">
+        <img src="/icons/css.svg">
+      </div>
+    </header> -->
+    
+    <div style="min-height: 100%;" class="column justify-center">
       <div id="nav-cube" class="elastic-spin bounce-in" style="top: 40%"></div>
       <div class="container text-center fade-in" style="padding-top: 100px;">
-        <h1>
+        <h1 class="didot bold">
           Seb Ringrose
         </h1>
         <p class="tomato">
-          Designer. Developer. Business Consultant & Professional Tutor.
+          Designer. Developer. Consultant & Tutor.
         </p>
       </div>
     </div>
@@ -34,21 +42,23 @@
         <h2>NavCube Cheatsheet</h2>
         <p>Input shapes into the magical NavCube by clicking/tapping the tiles.</p>
         <p><i>Is the NavCube really magical?</i> Well, if a cube that transports you around the internet isn't magic then I don't know what is.</p>
-        <p>hint: Always follow your heart. Start with the bottom and side edges, then turn it into a heart with the top squares...</p>
+        <p><b>hint:</b> Always follow your heart, even if it's empty. Start with the bottom and side edges, then create a simple heart outline with the top tiles...</p>
      
       </div>
     </div>
 
-    <!-- HIDDEN LINKS FOR GOOGLE -->
+    <!-- HIDDEN LINKS FOR SEARCH ENGINES -->
     <section style="display: hidden; height: 0;">
       <a href="/about">ABOUT</a>
       <a href="/tech">TECH</a>
-      <a href="/blog">BLOG</a>
     </section>
 
     <footer class="row align-center justify-between">
-        <a href="https://github.com/sebringrose"><img class="icon" src="/icons/github.svg" alt="github"></a>
-        <p style="margin: auto 0"><a target="_blank" href="https://github.com/edent/SuperTinyIcons/">icons</a></p>
+      <a href="https://github.com/sebringrose" class="row">
+        <img class="icon" src="/icons/github.svg" alt="github">
+        <p class="pink" style="margin: auto 0">&lt;- portfolio</p>
+      </a>
+      <p style="margin: auto 0"><a target="_blank" href="https://github.com/edent/SuperTinyIcons/">icons</a></p>
     </footer>
   </body>
 </html>
