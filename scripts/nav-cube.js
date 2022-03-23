@@ -22,17 +22,38 @@ const cre8cells = panes => {
   return cells
 }
 
-const rollCells = async (cube, cells, cellData, cellOrder) => {
+const setupCube = async (cube, cells, cellData, cellOrder) => {
+  // used to only trigger resize once
+  // will be ignored on homescreen
+  let small = true;
+  
+  // add onclick listener to cells
   cells.forEach((pane, i) => pane.forEach((cell, ii) => cell.onclick = () => {
-    if (window.location.pathname !== "/") {
-      cube.classList.toggle("bounce-in")
-      return window.location.href = "/"
-    }
     cell.classList.toggle("highlighted")
     Array.from(cell.classList).some(className => className === "highlighted" ? cellData[i][ii] = 1 : cellData[i][ii] = 0)
+    
+    // fullscreen cube on subpages
+    if (window.location.pathname !== "/" && small) {
+      small = false
+      cube.parentElement.style.height = "100vh";
+      cube.parentElement.style.width = "100vw";
+    }
+    
     checkCells(cube, cellData, cellCodes)
   }))
   
+  // scroll to shrink cube on onsubpages
+  if (window.location.pathname !== "/") {
+    document.addEventListener('scroll', function(e) {
+      if (!small) {
+        small = true
+        cube.parentElement.style.height = "5rem";
+        cube.parentElement.style.width = "5rem";   
+      }
+    });
+  }
+  
+  // roll starting cells
   for (let i = 0; i < cellOrder.length; i++) {
     await new Promise(res => setTimeout(res, 150))
     cells[cellOrder[i][0]][cellOrder[i][1]].className = "cell highlighted"
@@ -84,4 +105,4 @@ const openingCellOrder = [
   [1, 8],
   [1, 7]
 ]
-rollCells(cube, cells, cellData, openingCellOrder)
+setupCube(cube, cells, cellData, openingCellOrder)
