@@ -22,9 +22,15 @@ const cre8cells = panes => {
   return cells
 }
 
-const setupCube = async (cube, cells, cellData, cellOrder) => {
-  // used to only trigger resize once
-  // will be ignored on homescreen
+const setLocalCompleted = (completed) => localStorage.setItem("completed", JSON.stringify())
+const getLocalCompleted = () => {
+  const completed = localStorage.getItem("completed")
+  if (!completed) return new Array(cellCodes.length).fill(false)
+  return JSON.parse(completed)
+}
+
+const setupNavCube = async (cube, cells, cellData, cellOrder) => {
+  // only trigger resize once - ignored on homescreen bc conditions
   let small = true;
   
   // add onclick listener to cells
@@ -35,6 +41,7 @@ const setupCube = async (cube, cells, cellData, cellOrder) => {
     // fullscreen cube on subpages
     if (window.location.pathname !== "/" && small) {
       small = false
+      
       cube.parentElement.style.height = "100vh";
       cube.parentElement.style.width = "100vw";
     }
@@ -42,9 +49,14 @@ const setupCube = async (cube, cells, cellData, cellOrder) => {
     checkCells(cube, cellData, cellCodes)
   }))
   
-  // scroll to shrink cube on onsubpages
+  // scroll to expand & shrink cube on subpages
   if (window.location.pathname !== "/") {
     document.addEventListener('scroll', function(e) {
+      if (window.scrollY === 0 && small) {
+        small = false
+        cube.parentElement.style.height = "100vh";
+        return cube.parentElement.style.width = "100vw";  
+      }
       if (!small) {
         small = true
         cube.parentElement.style.height = "5rem";
@@ -67,8 +79,21 @@ const setupCube = async (cube, cells, cellData, cellOrder) => {
   }
 }
 
-const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
+const setupNavCubeShortcuts = () => {
+  const shortcuts = document.querySelector("#nav-cube-shortcuts")
+  const completed = getLocalCompleted()
   
+  // create grayed out cube templates for each cell-code
+  completed.forEach(code => {
+    const div = cre8("div", { className: "shortcut" }, shortcuts)
+    const panes = cre8panes(div)
+    const cells = cre8cells(panes)
+  })
+  
+  // click / drag to use shortcut
+}
+
+const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
   // first make sure top matches then do left then right
   if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
     if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
@@ -105,4 +130,6 @@ const openingCellOrder = [
   [1, 8],
   [1, 7]
 ]
-setupCube(cube, cells, cellData, openingCellOrder)
+setupNavCube(cube, cells, cellData, openingCellOrder)
+
+setupNavCubeShortcuts()
