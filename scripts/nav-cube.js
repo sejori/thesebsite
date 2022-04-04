@@ -22,6 +22,8 @@ const cre8cells = panes => {
   return cells
 }
 
+// PLACEHOLDER "COMPLETED" LOCALSTORAGE
+// to be used when unlocking shortcuts is added
 const setLocalCompleted = (completed) => localStorage.setItem("completed", JSON.stringify())
 const getLocalCompleted = () => {
   const completed = localStorage.getItem("completed")
@@ -29,7 +31,24 @@ const getLocalCompleted = () => {
   return JSON.parse(completed)
 }
 
+const displayShortcuts = (b) => {
+  const shortcuts = document.querySelector("#nav-cube-shortcuts")
+  const urlParams = new URLSearchParams(window.location.search)
+  const localSetting = localStorage.getItem("cheatCodes")
+  
+  console.log(localSetting)
+  
+  if (!urlParams.get("cheatCodes") && !localSetting) return false
+  
+  localStorage.setItem("cheatCodes", true)
+  
+  return b
+    ? shortcuts.style.display = "flex"
+    : shortcuts.style.display = "none"
+}
+
 const setupNavCube = async (cube, cells, cellData, cellOrder) => {
+  
   // only trigger resize once - ignored on homescreen bc conditions
   let small = true;
   
@@ -54,15 +73,21 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
     document.addEventListener('scroll', function(e) {
       if (window.scrollY === 0 && small) {
         small = false
+        
+        displayShortcuts(true)
         cube.parentElement.style.height = "100vh";
         return cube.parentElement.style.width = "100vw";  
       }
       if (!small) {
         small = true
+        
+        displayShortcuts(false)
         cube.parentElement.style.height = "5rem";
         cube.parentElement.style.width = "5rem";   
       }
     });
+  } else {
+    displayShortcuts(true)
   }
   
   // roll starting cells
@@ -80,15 +105,15 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
 }
 
 const setupNavCubeShortcuts = () => {
-  const shortcuts = document.querySelector("#nav-cube-shortcuts")
-  const completed = getLocalCompleted()
+  // const completed = getLocalCompleted()
   
+  // OLD - INTERACTIVE SHORTCUTS
   // create grayed out cube templates for each cell-code
-  completed.forEach(code => {
-    const div = cre8("div", { className: "shortcut" }, shortcuts)
-    const panes = cre8panes(div)
-    const cells = cre8cells(panes)
-  })
+  // completed.forEach(code => {
+  //   const div = cre8("div", { className: "shortcut" }, shortcuts)
+  //   const panes = cre8panes(div)
+  //   const cells = cre8cells(panes)
+  // })
   
   // click / drag to use shortcut
 }
@@ -132,4 +157,4 @@ const openingCellOrder = [
 ]
 setupNavCube(cube, cells, cellData, openingCellOrder)
 
-setupNavCubeShortcuts()
+// setupNavCubeShortcuts()
