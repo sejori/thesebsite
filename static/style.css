@@ -23,8 +23,8 @@ footer { padding: 1rem; background-color: white; }
 
 /* General classes */
 .fullscreen { position: absolute; top: 0; left: 0; min-height: 100vh; min-width: 100vw; }
-.full-height: { min-height: 100vh; }
-.fill-width: { width: 100%; }
+.full-height { min-height: 100vh; }
+.fill-width { width: 100%; }
 .container { margin: auto; margin: auto; padding: 1rem; max-width: 950px; }
 .column { display: flex; flex-direction: column; }
 .row { display: flex; }
@@ -38,7 +38,7 @@ footer { padding: 1rem; background-color: white; }
 .link { border: none; background-color: none; color: var(--pink); cursor: pointer; }
 .header-logo { margin: 1rem; height: 5rem; width: 5rem; transition: all 0.5s ease-out; }
 .align-self-center { align-self: center; }
-.circle { border-radius: 50% }
+.border-large { border-radius: 50px }
 .icon { width: 2rem; height: 2rem; margin: 1rem 0.5rem; color: var(--deepblue); }
 .text-icon { font-size: 2rem; display: flex; align-items: center; padding-top: 3px; }
 .text-center { text-align: center; }
