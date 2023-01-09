@@ -1,5 +1,6 @@
 # 🤖 Dear nerds of the web...
  
+
 Here's my breakdown of the amazing technologies that we use everyday. I hope you find it interesting, fun and informative.
 
 <strong>Warning: </strong>This goes deep into tech! If you're just following the NavCube hints, skip to the bottom.
@@ -73,8 +74,8 @@ Deno is pioneering modern JS outside of the browser, on machines and cloud isola
   <a target="_blank" href="https://www.rust-lang.org/"><img class="icon" src="/icons/rust.svg" alt="rust"></a>
 </div>
 
-Kickstarter of the age of information. C++ is everywhere. Your operating system? C++. Your plane's operating system? C++. The browser in which you are currently viewing this website? C++. Created for ultimate flexibility by quintessential-nerd and Swedish genius, <a target="_blank" href="https://en.wikipedia.org/wiki/Bjarne_Stroustrup">Bjarne Stroustrup</a>. There's nothing this language can't do but you might have to right a couple thousand lines of it to get you there. Writing numerical methods in C++ for aircraft simulations at university is what inspired me to take up a career in programming!
+Kickstarter of the age of information. C++ is everywhere. Your operating system? C++. Your plane's operating system? C++. The browser in which you are currently viewing this website? C++. Created for ultimate flexibility by quintessential-nerd and Swedish genius Bjarne Stroustrup. There's nothing this language can't do but you might have to right a couple thousand lines of it to get you there. Writing numerical methods in C++ for aircraft simulations at university is what inspired me to take up a career in programming!
 
 Rust, developed the philanthropic power-nerds at the Mozilla Foundation, is a lovely language much like C++. It can directly access a machines memory and is compiled into binary files before execution (unlike JavaScript which is interpretted at runtime). What makes Rust special is its modernized syntax and concept of memory ownership. The compiler is incredibly helpful and will tell you where your variables are not being managed properly before allowing you to compile and run. This makes your software inherently secure and memory-safe, unlike other low-level languages.
 
-<b>Hint:</b> a good exercise when learning about programming numerical methods is to write a Rubik's Cube solver. Annoyingly, mine kept getting stuck on the <i>The White Cross</i>...
+**Hint:** a good exercise when learning about programming numerical methods is to write a Rubik's Cube solver. Annoyingly, mine kept getting stuck on the <i>The White Cross</i>...

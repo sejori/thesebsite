@@ -109,7 +109,7 @@ const cellCodes = [
         1, 1, 1,
       ]
     ],
-    action: () => window.location.href = "/blog/completed"
+    action: () => window.location.href = "/blog/completed?cheatCodes=true"
   },
 ]
 

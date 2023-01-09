@@ -1,9 +1,8 @@
 import * as Peko from "peko"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
-import MarkdownIt from "markdownit"
+import { marky } from "marky"
 
-const md = new MarkdownIt()
 export const router = new Peko.Server()
 const cache = new Peko.ResponseCache()
 
@@ -45,7 +44,7 @@ articles.forEach(async (file) => {
     prod ? Peko.cacher(cache) : [], 
     Peko.ssrHandler(() => blogHTML.replace(
       /(?<=<main(.)*>)(.|\n)*?(?=<\/main>)/,
-      md.render(articleMD)
+      marky(articleMD)
     ))
   )
 })
