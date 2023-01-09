@@ -1,4 +1,4 @@
-import { cre8, cre8modal } from './cre8.js'
+import { cre8 } from './cre8.js'
 import { cellCodes } from './cell-codes.js'
 
 const cre8panes = cube => [
@@ -36,8 +36,6 @@ const displayShortcuts = (b) => {
   const urlParams = new URLSearchParams(window.location.search)
   const localSetting = localStorage.getItem("cheatCodes")
   
-  console.log(localSetting)
-  
   if (!urlParams.get("cheatCodes") && !localSetting) return false
   
   localStorage.setItem("cheatCodes", true)
@@ -70,7 +68,7 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
   
   // scroll to expand & shrink cube on subpages
   if (window.location.pathname !== "/") {
-    document.addEventListener('scroll', function(e) {
+    document.addEventListener('scroll', function() {
       if (window.scrollY === 0 && small) {
         small = false
         
@@ -102,20 +100,6 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
       cube.className = "wobble"
     }
   }
-}
-
-const setupNavCubeShortcuts = () => {
-  // const completed = getLocalCompleted()
-  
-  // OLD - INTERACTIVE SHORTCUTS
-  // create grayed out cube templates for each cell-code
-  // completed.forEach(code => {
-  //   const div = cre8("div", { className: "shortcut" }, shortcuts)
-  //   const panes = cre8panes(div)
-  //   const cells = cre8cells(panes)
-  // })
-  
-  // click / drag to use shortcut
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
@@ -156,5 +140,3 @@ const openingCellOrder = [
   [1, 7]
 ]
 setupNavCube(cube, cells, cellData, openingCellOrder)
-
-// setupNavCubeShortcuts()

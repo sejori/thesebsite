@@ -56,6 +56,10 @@ footer { padding: 1rem; background-color: white; }
 .pane .cell { transition: all 0.1s ease-out; box-sizing: border-box; border: 1px solid whitesmoke; cursor: pointer; }
 .pane .highlighted { background-color: var(--purple); }
 
+/* Blog stuff */
+.article-list { padding: 0; list-style-type: lower-alpha; }
+.article-list h2 { color: var(--lightblue) }
+
 /* Animations */
 .wobble {
   animation: wobble 0.4s ease;
