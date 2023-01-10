@@ -1,6 +1,12 @@
 import { cre8 } from './cre8.js'
 import { cellCodes } from './cell-codes.js'
 
+const cheatParam = new URLSearchParams(window.location.search).get("cheatCodes")
+const localCheatCodes = 
+  (localStorage.getItem("cheatCodes") === "true" || cheatParam === "true") 
+  && cheatParam !== "false"
+
+
 const cre8panes = cube => [
   cre8("div", { className: "pane cube-top-pane" }, cube),
   cre8("div", { className: "pane cube-left-pane" }, cube),
@@ -22,67 +28,52 @@ const cre8cells = panes => {
   return cells
 }
 
-// PLACEHOLDER "COMPLETED" LOCALSTORAGE
-// to be used when unlocking shortcuts is added
-const setLocalCompleted = (completed) => localStorage.setItem("completed", JSON.stringify())
-const getLocalCompleted = () => {
-  const completed = localStorage.getItem("completed")
-  if (!completed) return new Array(cellCodes.length).fill(false)
-  return JSON.parse(completed)
-}
-
 const displayShortcuts = (b) => {
   const shortcuts = document.querySelector("#nav-cube-shortcuts")
-  const urlParams = new URLSearchParams(window.location.search)
-  const localSetting = localStorage.getItem("cheatCodes")
-  
-  if (!urlParams.get("cheatCodes") && !localSetting) return false
-  
-  localStorage.setItem("cheatCodes", true)
-  
-  return b
+  if (!localCheatCodes) return shortcuts.style.display = "none"
+
+  return b 
     ? shortcuts.style.display = "flex"
     : shortcuts.style.display = "none"
 }
 
 const setupNavCube = async (cube, cells, cellData, cellOrder) => {
-  
+  localStorage.setItem("cheatCodes", localCheatCodes)
+
   // only trigger resize once - ignored on homescreen bc conditions
   let small = true;
+
+  const enlargeCube = () => {
+    small = false
+    displayShortcuts(true)
+    cube.parentElement.style.height = "100vh";
+    cube.parentElement.style.width = "100vw";
+  }
+
+  const shrinkCube = () => {
+    small = true 
+    displayShortcuts(false)
+    cube.parentElement.style.height = "5rem";
+    cube.parentElement.style.width = "5rem";   
+  }
   
   // add onclick listener to cells
   cells.forEach((pane, i) => pane.forEach((cell, ii) => cell.onclick = () => {
     cell.classList.toggle("highlighted")
-    Array.from(cell.classList).some(className => className === "highlighted" ? cellData[i][ii] = 1 : cellData[i][ii] = 0)
+    Array.from(cell.classList).some(className => {
+      className === "highlighted" ? cellData[i][ii] = 1 : cellData[i][ii] = 0
+    })
     
     // fullscreen cube on subpages
-    if (window.location.pathname !== "/" && small) {
-      small = false
-      
-      cube.parentElement.style.height = "100vh";
-      cube.parentElement.style.width = "100vw";
-    }
-    
+    if (window.location.pathname !== "/" && small) enlargeCube()
     checkCells(cube, cellData, cellCodes)
   }))
   
   // scroll to expand & shrink cube on subpages
   if (window.location.pathname !== "/") {
     document.addEventListener('scroll', function() {
-      if (window.scrollY === 0 && small) {
-        small = false
-        
-        displayShortcuts(true)
-        cube.parentElement.style.height = "100vh";
-        return cube.parentElement.style.width = "100vw";  
-      }
-      if (!small) {
-        small = true
-        
-        displayShortcuts(false)
-        cube.parentElement.style.height = "5rem";
-        cube.parentElement.style.width = "5rem";   
-      }
+      if (window.scrollY === 0 && small) enlargeCube()
+      else if (!small) shrinkCube()
     });
   } else {
     displayShortcuts(true)
@@ -120,7 +111,7 @@ const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => 
 const cube = document.querySelector("#nav-cube")
 const panes = cre8panes(cube)
 const cells = cre8cells(panes)
-const cellData = cells.map(pane => pane.map(cell => 0))
+const cellData = cells.map(pane => pane.map(() => 0))
 const openingCellOrder = [ 
   [0, 1],
   [0, 0],

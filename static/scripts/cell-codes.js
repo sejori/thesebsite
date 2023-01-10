@@ -2,6 +2,27 @@ import { cre8, cre8modal } from './cre8.js'
 
 const cellCodes = [
   {
+    name: "Home",
+    code: [
+      [
+        1, 1, 0,
+        1, 0, 0,
+        1, 0, 1,
+      ],
+      [
+        1, 1, 1,
+        0, 0, 0,
+        0, 1, 1,
+      ],
+      [
+        1, 1, 1,
+        0, 0, 1,
+        1, 1, 1,
+      ]
+    ],
+    action: () => window.location.href = "/", 
+  },
+  {
     name: "GameCube",
     code: [
       [
@@ -22,9 +43,9 @@ const cellCodes = [
     ],
     action: () => {
       const modal = cre8modal()
-      cre8("h3", { textContent: "My inspiration - The GameCube!" }, modal)
-      cre8("p", { textContent: "Games and websites were how I learned to code." }, modal)
-      cre8("p", { textContent: "Now I'm also interested in network security, asset optimisation and data pipelines, AI and robotics." }, modal)
+      cre8("h2", { textContent: "The GameCube!" }, modal)
+      cre8("p", { textContent: "Ah the nostalgia... games and websites were my inspiration to start learning to code. It's been a long journey since then and I've grown a lot along the way." }, modal)
+      cre8("p", { textContent: "The technical world is a deep one full of great people and great ideas but remember not to get deluded by the promise of effortless riches." }, modal)
     }, 
   },
   {
