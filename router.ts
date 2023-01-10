@@ -45,8 +45,6 @@ articles.forEach(async (file) => {
   const fileRoute = file.slice(`${Deno.cwd()}/articles`.length+1)
   const articleMD = await Deno.readTextFile(file)
 
-  console.log(fileRoute)
-
   return router.addRoute(
     `/blog/${fileRoute.slice(0, -3)}`, 
     prod ? Peko.cacher(cache) : [], 
