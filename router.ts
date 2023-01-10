@@ -23,6 +23,7 @@ router.addRoute(
 
 const blogHTML = await Deno.readTextFile(new URL("./pages/blog.html", import.meta.url))
 const articles = await recursiveReaddir(fromFileUrl(new URL("./articles", import.meta.url)))
+console.log(articles)
 
 router.addRoute("/blog", Peko.ssrHandler(() => {
   return blogHTML.replace(
