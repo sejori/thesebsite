@@ -109,7 +109,7 @@ const cellCodes = [
         0, 0, 0,
       ]
     ],
-    action: () => window.location.href = "/blog/tech"
+    action: () => window.location.href = "/blog/web-tech"
   },
   {
     name: "completed",
