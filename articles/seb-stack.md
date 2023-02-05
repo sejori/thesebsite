@@ -6,7 +6,7 @@ Yes... I've named a stack after myself.
 
 **Edge:** cached code assets on global infrastructure of content delivery network (CDN)
 
-**Boosted:** WebAssembly for direct memory management (safe with Rust)
+**Boosted:** WebAssembly for wider toolset and direct memory management (safe with Rust)
 
 This setup takes so much of the headache out of app hosting. A drawback however is that adhering to data protection law means not storing user data outside of country of origin. So a degree of hosting is always eventually required, for good reason I suppose.
 
