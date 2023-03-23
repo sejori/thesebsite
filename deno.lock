@@ -82,5 +82,33 @@
     "https://esm.sh/v99/uc.micro@1.0.6/deno/categories/Z/regex.js": "4bfc4153ad1a995246c711230ecfc0b4c9274c9148d0a3d3309f770ca25c3907",
     "https://esm.sh/v99/uc.micro@1.0.6/deno/properties/Any/regex.js": "943005cb551bcde2ac1cf871976ac01863b9cfc0a17944f30ec74d0413617c0e",
     "https://esm.sh/v99/uc.micro@1.0.6/deno/uc.micro.js": "c5f75cf07a117d98a91c48ab9467517542b0b043fff6c6174466a415990ce286"
+  },
+  "npm": {
+    "specifiers": {
+      "htm": "htm@3.1.1",
+      "react": "react@18.2.0"
+    },
+    "packages": {
+      "htm@3.1.1": {
+        "integrity": "sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==",
+        "dependencies": {}
+      },
+      "js-tokens@4.0.0": {
+        "integrity": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
+        "dependencies": {}
+      },
+      "loose-envify@1.4.0": {
+        "integrity": "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==",
+        "dependencies": {
+          "js-tokens": "js-tokens@4.0.0"
+        }
+      },
+      "react@18.2.0": {
+        "integrity": "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==",
+        "dependencies": {
+          "loose-envify": "loose-envify@1.4.0"
+        }
+      }
+    }
   }
 }
