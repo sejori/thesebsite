@@ -1,4 +1,4 @@
-import { html } from "../utils/index.ts"
+import { html } from "../utils/react.ts"
 
 const Footer = () => html`
   <footer class="row align-center justify-between">

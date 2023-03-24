@@ -1,4 +1,4 @@
-import { html } from "../utils/index.ts"
+import { html } from "../utils/react.ts"
 import Head from "../components/Head.ts"
 import Header from "../components/Header.ts"
 import Footer from "../components/Footer.ts"

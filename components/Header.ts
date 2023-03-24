@@ -1,4 +1,4 @@
-import { html } from "../utils/index.ts"
+import { html } from "../utils/react.ts"
 
 const Header = ({ showCube }: Record<string, string>) => html`
   <header class="row justify-between">

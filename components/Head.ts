@@ -1,4 +1,4 @@
-import { html } from "../utils/index.ts"
+import { html } from "../utils/react.ts"
 
 const Head = ({ title, desc }: Record<string, string>) => html`
   <head>

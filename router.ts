@@ -2,7 +2,7 @@ import * as Peko from "peko"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 import { marky } from "marky"
-import { html, renderToReadableStream, renderToString } from "./utils/index.ts"
+import { html, renderToReadableStream, renderToString } from "./utils/react.ts"
 
 import Index from "./pages/Index.ts"
 import About from "./pages/About.ts"
