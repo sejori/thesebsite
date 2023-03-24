@@ -115,7 +115,8 @@
       "preact-render-to-string": "preact-render-to-string@5.2.6_preact@10.13.1",
       "react": "react@18.2.0",
       "react-dom": "react-dom@18.2.0_react@18.2.0",
-      "react-dom@18.2.0": "react-dom@18.2.0_react@18.2.0"
+      "react-dom@18.2.0": "react-dom@18.2.0_react@18.2.0",
+      "react@18.2.0": "react@18.2.0"
     },
     "packages": {
       "htm@3.1.1": {

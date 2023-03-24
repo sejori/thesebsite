@@ -2,9 +2,11 @@ import * as Peko from "peko"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 import { marky } from "marky"
-import { html, renderToReadableStream } from "./utils/index.ts"
+import { html, renderToReadableStream, renderToString } from "./utils/index.ts"
 
-import Index from "./pages/index.ts"
+import Index from "./pages/Index.ts"
+import About from "./pages/About.ts"
+import Blog from "./pages/Blog.ts"
 
 export const router = new Peko.Server()
 const cache = new Peko.ResponseCache()
@@ -20,11 +22,11 @@ router.addRoute(
 )
 router.addRoute(
   "/about", 
-  Peko.staticHandler(new URL("./pages/about.html", import.meta.url), { headers })
+  Peko.ssrHandler(() => renderToReadableStream(html`<${About} />`), { headers })
 )
 
 
-const blogHTML = await Deno.readTextFile(new URL("./pages/blog.html", import.meta.url))
+const blogHTML = await renderToString(html`<${Blog} />`)
 const articles = await recursiveReaddir(fromFileUrl(new URL("./articles", import.meta.url)))
 
 router.addRoute("/blog", Peko.ssrHandler(() => {
