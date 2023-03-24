@@ -2,6 +2,9 @@ import * as Peko from "peko"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
 import { marky } from "marky"
+import { html, renderToReadableStream } from "./utils/index.ts"
+
+import Index from "./pages/index.ts"
 
 export const router = new Peko.Server()
 const cache = new Peko.ResponseCache()
@@ -13,7 +16,7 @@ const headers = new Headers({
 
 router.addRoute(
   "/", 
-  Peko.staticHandler(new URL("./pages/index.html", import.meta.url), { headers })
+  Peko.ssrHandler(() => renderToReadableStream(html`<${Index} />`), { headers })
 )
 router.addRoute(
   "/about", 

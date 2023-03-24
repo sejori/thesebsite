@@ -63,7 +63,32 @@
     "https://deno.land/x/peko@1.3.4/utils/ResponseCache.ts": "18f3b4d10472b27bf0f06746af5a37ff623bbed164509fc28e95ff17852ef815",
     "https://deno.land/x/peko@1.3.4/utils/helpers.ts": "b35863491f98ca84538283d60dd94672a0fcc8f40bfb0688a727fd6352c61197",
     "https://deno.land/x/recursive_readdir@v2.0.0/mod.ts": "521e026015897f04551cc921c619e8c5e69bef161fdc86e7b29a8a85dc8ea1e0",
+    "https://esm.sh/htm@3.1.1": "9bfcf90a678ddf08d89a597d6d3340a80813fa888a5304c256e57802d44846d7",
     "https://esm.sh/markdown-it@13.0.1": "39e8f3ddc83b5832724ee78a3b11b5912dc1638c4aaa638a88102725e7de9786",
+    "https://esm.sh/react-dom@18.2.0/server": "4ad05408f3e06bcdc08036880abe01232f9fb9200a03491b7097d922036feb13",
+    "https://esm.sh/react-dom@18.2.0/server?dev": "7dadbc44d45d354c55fbe2e6393a4aaf0a4a5c4fd58a7259805902012d6189d5",
+    "https://esm.sh/react@18.2.0": "84aa07282d2f3c843f7d56daeae0be41ceae768391c4418f7358dd64e8fe4eca",
+    "https://esm.sh/react@18.2.0?dev": "20a29b08171987a0138aaa58ef99378755c94bc93de8ac21a5b4d4516c0a8474",
+    "https://esm.sh/stable/react@18.2.0/deno/react.development.js": "e796e57e34813c0eb51a6d26aff490483d9fe3df437d6b029b0f1014d7205715",
+    "https://esm.sh/stable/react@18.2.0/deno/react.development.mjs": "9a0a80493ea299a371f6e00009a7ad2397bd023f722f0116a83e5e75e6e5b53d",
+    "https://esm.sh/stable/react@18.2.0/deno/react.js": "99f4a29109464569449be1002a828827c6dc9d7a386d28da012c29ba4cc88abd",
+    "https://esm.sh/v111/@types/prop-types@15.7.5/index.d.ts": "6a386ff939f180ae8ef064699d8b7b6e62bc2731a62d7fbf5e02589383838dea",
+    "https://esm.sh/v111/@types/react-dom@18.0.11/server~.d.ts": "062c36a354f037958d99f5741781417e760b9484afb4669288161719df63ae20",
+    "https://esm.sh/v111/@types/react@18.0.26/global.d.ts": "bbdf156fea2fabed31a569445835aeedcc33643d404fcbaa54541f06c109df3f",
+    "https://esm.sh/v111/@types/react@18.0.26/index.d.ts": "bb01db1b434ece658ae4da2a91c855f5ce823bdad82d8a0265e325aa12193450",
+    "https://esm.sh/v111/@types/react@18.0.28/global.d.ts": "bbdf156fea2fabed31a569445835aeedcc33643d404fcbaa54541f06c109df3f",
+    "https://esm.sh/v111/@types/react@18.0.28/index.d.ts": "bb01db1b434ece658ae4da2a91c855f5ce823bdad82d8a0265e325aa12193450",
+    "https://esm.sh/v111/@types/scheduler@0.16.2/tracing.d.ts": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+    "https://esm.sh/v111/csstype@3.1.1/index.d.ts": "1c29793071152b207c01ea1954e343be9a44d85234447b2b236acae9e709a383",
+    "https://esm.sh/v111/htm@3.1.1/deno/htm.js": "10ff4fdb79ce3c4c7cf47577410d71162d14b14f579037d42d20bfdd6512cdd7",
+    "https://esm.sh/v111/htm@3.1.1/dist/htm.d.ts": "63182906b224d53eb87b431224eba16215632f5ce1b854075d159a3d5762f052",
+    "https://esm.sh/v111/react-dom@18.2.0/deno/server.development.js": "83ed107063bfb7c22fae6600c35f0c300869bfc5edda8f2afa6f97117ac50efc",
+    "https://esm.sh/v111/react-dom@18.2.0/deno/server.js": "856a38f0fc1dd4c3c2a3432d88fbaf29da15eef3155c0cb8ea8de1febe13b197",
+    "https://esm.sh/v112/@types/prop-types@15.7.5/index.d.ts": "6a386ff939f180ae8ef064699d8b7b6e62bc2731a62d7fbf5e02589383838dea",
+    "https://esm.sh/v112/@types/react@18.0.28/global.d.ts": "bbdf156fea2fabed31a569445835aeedcc33643d404fcbaa54541f06c109df3f",
+    "https://esm.sh/v112/@types/react@18.0.28/index.d.ts": "8d2447387885f091097f41362bad4a6eddb4d5e58aa3bfd472e6dc7cac1dbb19",
+    "https://esm.sh/v112/@types/scheduler@0.16.2/tracing.d.ts": "f5a8b384f182b3851cec3596ccc96cb7464f8d3469f48c74bf2befb782a19de5",
+    "https://esm.sh/v112/csstype@3.1.1/index.d.ts": "1c29793071152b207c01ea1954e343be9a44d85234447b2b236acae9e709a383",
     "https://esm.sh/v99/@types/markdown-it@12.2.3/common/utils~.d.ts": "854cdc32752c20a63ea380b17a93c803d6d1e06fa939fdc231732a7b35e8a906",
     "https://esm.sh/v99/@types/markdown-it@12.2.3/helpers~.d.ts": "854cdc32752c20a63ea380b17a93c803d6d1e06fa939fdc231732a7b35e8a906",
     "https://esm.sh/v99/@types/markdown-it@12.2.3/index.d.ts": "ee0af0f2b8d3b4d0baf669f2ff6fcef4a8816a473c894cc7c905029f7505fed0",
@@ -86,7 +111,11 @@
   "npm": {
     "specifiers": {
       "htm": "htm@3.1.1",
-      "react": "react@18.2.0"
+      "preact": "preact@10.13.1",
+      "preact-render-to-string": "preact-render-to-string@5.2.6_preact@10.13.1",
+      "react": "react@18.2.0",
+      "react-dom": "react-dom@18.2.0_react@18.2.0",
+      "react-dom@18.2.0": "react-dom@18.2.0_react@18.2.0"
     },
     "packages": {
       "htm@3.1.1": {
@@ -103,8 +132,37 @@
           "js-tokens": "js-tokens@4.0.0"
         }
       },
+      "preact-render-to-string@5.2.6_preact@10.13.1": {
+        "integrity": "sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==",
+        "dependencies": {
+          "preact": "preact@10.13.1",
+          "pretty-format": "pretty-format@3.8.0"
+        }
+      },
+      "preact@10.13.1": {
+        "integrity": "sha512-KyoXVDU5OqTpG9LXlB3+y639JAGzl8JSBXLn1J9HTSB3gbKcuInga7bZnXLlxmK94ntTs1EFeZp0lrja2AuBYQ==",
+        "dependencies": {}
+      },
+      "pretty-format@3.8.0": {
+        "integrity": "sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==",
+        "dependencies": {}
+      },
+      "react-dom@18.2.0_react@18.2.0": {
+        "integrity": "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==",
+        "dependencies": {
+          "loose-envify": "loose-envify@1.4.0",
+          "react": "react@18.2.0",
+          "scheduler": "scheduler@0.23.0"
+        }
+      },
       "react@18.2.0": {
         "integrity": "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==",
+        "dependencies": {
+          "loose-envify": "loose-envify@1.4.0"
+        }
+      },
+      "scheduler@0.23.0": {
+        "integrity": "sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==",
         "dependencies": {
           "loose-envify": "loose-envify@1.4.0"
         }
