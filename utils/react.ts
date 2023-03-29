@@ -4,4 +4,6 @@ export {
   renderToString,
   renderToReadableStream 
 } from "npm:react-dom@18.2.0/server"
+
 export const html = htm.bind(React.createElement)
+export const css = String

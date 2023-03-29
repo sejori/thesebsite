@@ -1,6 +1,6 @@
 import { html } from "../utils/react.ts"
 
-const Head = ({ title, desc }: Record<string, string>) => html`
+const Head = ({ title, desc, style }: Record<string, string>) => html`
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,8 +14,10 @@ const Head = ({ title, desc }: Record<string, string>) => html`
     <link rel="stylesheet" href="/style.css" />
     
     <!-- import the webpage's javascript -->
-    <script src="/scripts/cre8.js" type="module" defer />
-    <script src="/scripts/nav-cube.js" type="module" defer />
+    <script src="/scripts/cre8.js" type="module" defer></script>
+    <script src="/scripts/nav-cube.js" type="module" defer></script>
+
+    <style dangerouslySetInnerHTML=${{ __html: style }} ></style>
   </head>
 `
 

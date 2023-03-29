@@ -43,7 +43,6 @@ footer { padding: 1rem; background-color: white; }
 .text-icon { font-size: 2rem; display: flex; align-items: center; padding-top: 3px; }
 .text-center { text-align: center; }
 .no-display { display: none; }
-.label { text-decoration: none; font-size: 0.8rem; color: var(--deepblue); margin: 0.5rem; }
 
 /* Nav Cube stuffs */
 #nav-cube-shortcuts { display: none; width: 100%; position: absolute; padding-top: 1rem; }

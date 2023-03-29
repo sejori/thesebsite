@@ -1,12 +1,13 @@
 import { html } from "../utils/react.ts"
 import Head from "../components/Head.ts"
-import Header from "../components/Header.ts"
+import Header, { HeaderCSS } from "../components/Header.ts"
 import Footer from "../components/Footer.ts"
 
 const Index = () => html`
   <${Head} 
     title="The Sebsite" 
     desc="Welcome to The Sebsite. Navigate by inputting codes into the magical NavCube. Can you solve it?"
+    style="${HeaderCSS}"
   />
   <body>
     <${Header} showCube=false />
