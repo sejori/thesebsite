@@ -68,7 +68,7 @@ footer { padding: 1rem; background-color: white; }
 
 /* Landing stuff */
 #landing #nav-cube { margin-top: -50px; }
-#landing h1 { margin-top: 120px; }
+#landing h1 { margin-top: 120px; margin-bottom: -10px; }
 #guide { position: relative; }
 #guide #scrolly { 
   position: absolute;

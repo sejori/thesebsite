@@ -8,4 +8,4 @@ If you're looking for further challenges then please get in touch with me. I am 
 
 [Click here](/blog) to checkout my blog. There may still be a secret or two in the NavCube so pay attention when reading the articles... ;)
 
-*Pssst...* this page isn't shown in the blog and use *noindex* meta tags to hide itself from Google. Only the truly worthy may find it 😈
+_Pssst..._ this page isn't shown in the blog and use **noindex** meta tags to hide itself from Google. Only the truly worthy may find it 😈

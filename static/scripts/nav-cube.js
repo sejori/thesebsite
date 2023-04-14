@@ -1,4 +1,4 @@
-import { cre8 } from './cre8.js'
+import { cre8, throttleEvent } from './utils.js'
 import { cellCodes } from './cell-codes.js'
 
 const cheatParam = new URLSearchParams(window.location.search).get("cheatCodes")
@@ -71,10 +71,10 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
   
   // scroll to expand & shrink cube on subpages
   if (window.location.pathname !== "/") {
-    document.addEventListener('scroll', function() {
+    document.addEventListener('scroll', throttleEvent(function() {
       if (window.scrollY === 0 && small) enlargeCube()
       else if (!small) shrinkCube()
-    });
+    }, 10));
   } else {
     displayShortcuts(true)
   }

@@ -14,7 +14,6 @@ const Head = ({ title, desc, style }: Record<string, string>) => html`
     <link rel="stylesheet" href="/style.css" />
     
     <!-- import the webpage's javascript -->
-    <script src="/scripts/cre8.js" type="module" defer></script>
     <script src="/scripts/nav-cube.js" type="module" defer></script>
 
     <style dangerouslySetInnerHTML=${{ __html: style }} ></style>

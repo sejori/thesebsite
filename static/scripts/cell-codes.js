@@ -1,4 +1,4 @@
-import { cre8, cre8modal } from './cre8.js'
+import { cre8, cre8modal } from './utils.js'
 
 const cellCodes = [
   {
