@@ -8,7 +8,7 @@ const Blog = () => html`
     title="The Sebsite | About" 
     desc="Thanks for taking the time to stop by my website - reach out if you would like to talk tech!"
     style="${HeaderCSS}"
-    />
+  />
   <body>
     <${Header} showCube=true />
     

@@ -8,7 +8,7 @@ const About = () => html`
     title="The Sebsite | About" 
     desc="Thanks for taking the time to stop by my website - reach out if you would like to talk tech!"
     style="${HeaderCSS}"
-    />
+  />
   <body>
     <${Header} showCube=true />
     
@@ -31,7 +31,7 @@ const About = () => html`
         Whether in the skatepark, studio or "office" keep it fun, seriousness breeds burnout. If you have a project you'd like to share with me, get in touch via the email button above. You can see more of my work on <a href="https://github.com/sebringrose">GitHub</a> or keep solving the NavCube to find out more... 
       </p>
       <p>
-        <b>Hint:</b> the door to my cubic house is on the left and I usually leave the window on the right hand side shut. But when looking for secrets I tend to open it...
+        <b>Hint:</b> my purple cubic house has a white door on the left and a window on the right. I usually leave the window shut but when looking for secrets I tend to open it...
       </p>
     </section>
 
