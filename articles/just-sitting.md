@@ -4,6 +4,8 @@ A little project of mine for the last couple of years has been an online shared 
 
 That was until a friend of mine got involved in the project. He's a super smart guy with a practical mind, and to top it all off he has experience with sales and B2B business models. He quickly started brainstorming B2B integrations for the app and we are now building the marketing site alongside the social advertising strategy and scheming up the price points and packages to offer. I'll update this when there is a bit more to show!
 
+**April 2023 Update:** This project is currently not in active development. Life happens. Please do check it out though and get in touch with any thoughts if you like ^^
+
 <div style="width: 100%">
   <iframe width="100%" height="500" src="https://just-sitting.io" title="Just Sitting" frameborder="0"></iframe>
 </div>
