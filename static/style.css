@@ -50,7 +50,7 @@ footer { padding: 1rem; background-color: white; }
 .header-logo { margin: 1rem; height: 5rem; width: 5rem; transition: all 0.5s ease-out; }
 .align-self-center { align-self: center; }
 .border-large { border-radius: 50px }
-.icon { width: 2rem; height: 2rem; margin: 1rem 0.5rem; color: var(--deepblue); }
+.icon { width: 2rem; height: 2rem; margin: 1rem 0.5rem; color: var(--deepblue); border-radius: 5px; }
 .text-icon { font-size: 2rem; display: flex; align-items: center; padding-top: 3px; }
 .text-center { text-align: center; }
 .no-display { display: none; }

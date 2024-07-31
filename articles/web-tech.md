@@ -1,5 +1,4 @@
 # 🤖 Dear nerds of the web...
- 
 
 Here's my breakdown of the amazing technologies that we use everyday. I hope you find it interesting, fun and informative.
 
@@ -29,9 +28,9 @@ If you've used <a href="https://www.docker.com/">Docker</a> before you will know
   <a target="_blank" href="https://www.mozilla.org/firefox/"><img class="icon" src="/icons/firefox.svg" alt="firefox"></a>
 </div>
 
-Web browsers are the sickest piece of software installed on any computer. They turn your lonely little machine into a social butterfly by allowing it to interact with <strong><i>"The Internet"</i></strong>. Putting the collective knowledge and tools of humanity at your fingertips. 
+Web browsers are the sickest piece of software installed on any computer. They turn your lonely little machine into a social butterfly by allowing it to interact with <strong><i>"The Internet"</i></strong>. Putting the collective knowledge and tools of humanity at your fingertips.
 
-Personally, I think that the internet is the single most important wonder of human engineering that has ever existed. It is also openly shared across national borders (mostly). Proving that access to information and collaboration is truly more important than sabotage to most humans. Isn't that lovely? 
+Personally, I think that the internet is the single most important wonder of human engineering that has ever existed. It is also openly shared across national borders (mostly). Proving that access to information and collaboration is truly more important than sabotage to most humans. Isn't that lovely?
 
 But what is <strong><i>"The Internet"</i></strong> really though? Well, just a standardised set of binary-serial data transfer protocols to send data between computers via a sh\*t-load of undersea cables and a few satellites really. So computer hardware can receive/send electrical signals through this <strong><i>"The Internet"</i></strong> and encode/decode them into serial data to then pass into firmware and software via bus circuits in the cpu and motherboard.
 
@@ -57,25 +56,26 @@ CSS, the skin, defines rendering intructions that the browser uses once it has m
 
 For examples of my work HTML, CSS & JavaScript you need look no further than this website, or check out my projects on <a target="_blank" href="https://github.com/sebringrose">GitHub</a>.
 
-## The Extended Javascript Universe
+## The Interpretted Universe: Python & Java(Type)Script
 
 <div class="row justify-center">
-  <h2 class="royalblue"><a target="_blank" href="https://nodejs.org/en/">Node.js</a> & <a target="_blank" href="https://deno.land/">Deno</a></h2>
+  <a target="_blank" href="https://nodejs.org"><img class="icon" src="/icons/nodejs.svg" alt="nodejs"></a>
+  <a target="_blank" href="https://www.python.org"><img class="icon" src="/icons/python.svg" alt="python"></a>
 </div>
 
 ### Frameworks
 
-JavaScript tools, like Facebook's <a target="_blank" href="https://reactjs.org/">React library</a>, link variables to the **DOM** via it's concept of in-memory "state". Changes in state are first calculated in a Virtual DOM (VDOM) then efficiently mapped to the DOM using some smart algorithms in a process called object-diffing.
+Facebook's <a target="_blank" href="https://reactjs.org/">React library</a>, link variables to the **DOM** via it's concept of in-memory "state". Changes in state are first calculated in a Virtual DOM (VDOM) then efficiently mapped to the DOM using some smart algorithms in a process called object-diffing.
 
-The React library resulted in a huge productivity boost for frontend web developers and has therefore exploded in popularity. It's spinoff cousin <a target="_blank" href="https://reactnative.dev/">React Native</a> brings the same JavaScript app magic to mobile development and <a target="_blank" href="https://www.electronjs.org/">Electron</a> brings web applications to desktop by utlising Google's open-source Chromium engine - awesome!
+The React library resulted in a huge productivity boost for frontend web developers and has therefore exploded in popularity. It's spinoff cousin <a target="_blank" href="https://reactnative.dev/">React Native</a> brings the same JavaScript/TypeScript app magic to mobile development and <a target="_blank" href="https://www.electronjs.org/">Electron</a> brings web applications to desktop by utlising Google's open-source Chromium browser engine - awesome!
+
+<a target="_blank" href="https://www.djangoproject.com/">Django</a> was created in the early days of the internet and has evolved with the times magnificently! It is a trusted companion to engineers looking to serve data across the planet. The framework exposes a number of classes, such as: Views, Forms and Middleware. These building blocks of HTTP applications are then glued together in configuration files. Django is an excellent example of an object-oriented program exposing a simple system for developers to rapidly build upon and expand.
 
 ### Beyond the page
 
-From humble beginnings, toggling colours and managing files, to complex data pipelines and artical intelligence on machines, microcontrollers and the cloud. JavaScript has worked it's way into all areas of technology.
+From humble beginnings, toggling colours and managing files, to complex data pipelines and artical intelligence on machines, microcontrollers and the cloud. JavaScript and Python have worked their way into all areas of technology.
 
-So how does JavaScript move beyond web UIs and into the wider world of tech? Low-level engines like Chromium running in a runtime like Node.js, or others like its successor Deno, with functionality for executing UNIX commands and working with a local file system etc. Node.js is wildly popular and drives the vast majority of open-source code today!
-
-Deno is pioneering modern JS outside of the browser, on machines and cloud isolates. It uses Rust under-the-hood to create a feature-rich environment for your code.
+So how have these "interpretted" languages become so powerful? Low-level engines such as Node.js or The Python Interpretter have the power to access machine hardware directly, execute UNIX commands and work with local file systems. These "engines" then provide this functionality to users via a high-level programming language, such as TypeScript or Python. They are wildly popular and drive the vast majority of open-source code today!
 
 ## The Low-Level Powerhouses: C++ & Rust
 
