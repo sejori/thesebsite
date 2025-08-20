@@ -1,38 +1,41 @@
-import * as Peko from "peko"
+import * as Peko from "@sejori/peko"
+import { 
+  renderToString,
+  renderToReadableStream 
+} from "react-dom/server"
+import { marky } from "marky"
 import { recursiveReaddir } from "recursiveReadDir"
 import { fromFileUrl } from "fromFileUrl"
-import { marky } from "marky"
-import { html, renderToReadableStream, renderToString } from "./utils/react.ts"
 
+import { html } from "./utils/react.ts"
 import Index from "./pages/Index.ts"
 import About from "./pages/About.ts"
 import Blog from "./pages/Blog.ts"
 
-export const router = new Peko.Server()
-const cache = new Peko.ResponseCache()
+export const router = new Peko.HttpRouter()
 
 const prod = Deno.env.get("ENVIRONMENT") === "production"
 const headers = new Headers({
   "Cache-Control": prod ? "max-age=600, stale-while-revalidate=86400" : ""
 })
 
-router.addRoute(
+router.GET(
   "/", 
-  Peko.ssrHandler(() => renderToReadableStream(html`<${Index} />`), { headers })
+  Peko.ssr(() => renderToReadableStream(html`<${Index} />` as any), { headers })
 )
-router.addRoute(
+router.GET(
   "/about", 
-  Peko.ssrHandler(() => renderToReadableStream(html`<${About} />`), { headers })
+  Peko.ssr(() => renderToReadableStream(html`<${About} />` as any), { headers })
 )
 
 
-const blogHTML = await renderToString(html`<${Blog} />`)
+const blogHTML = await renderToString(html`<${Blog} />` as any)
 const articles = await recursiveReaddir(fromFileUrl(new URL("./articles", import.meta.url)))
 
-router.addRoute("/blog", Peko.ssrHandler(() => {
+router.GET("/blog", Peko.ssr(() => {
   return blogHTML.replace(
     /(?<=<main(.)*>)(.|\n)*?(?=<\/main>)/,
-    `<h1>Stuff</h1>
+    `<h1>Writings and musings:</h1>
     <ul class="article-list">
       ${articles.filter(path => !path.includes("completed.md")).map(path => {
         const name = path.slice(`${Deno.cwd()}/articles`.length+1).slice(0, -3)
@@ -50,10 +53,10 @@ articles.forEach(async (file) => {
   const fileRoute = file.slice(`${Deno.cwd()}/articles`.length+1)
   const articleMD = await Deno.readTextFile(file)
 
-  return router.addRoute(
+  return router.GET(
     `/blog/${fileRoute.slice(0, -3)}`, 
-    prod ? Peko.cacher(cache) : [], 
-    Peko.ssrHandler(() => blogHTML.replace(
+    (prod ? [Peko.cache()] : []) as Peko.Middleware[], 
+    Peko.ssr(() => blogHTML.replace(
       /(?<=<main(.)*>)(.|\n)*?(?=<\/main>)/,
       marky(articleMD)
     ))
@@ -61,11 +64,33 @@ articles.forEach(async (file) => {
 })
 
 const staticFiles = await recursiveReaddir(fromFileUrl(new URL("./static", import.meta.url)))
-staticFiles.forEach((file): number => {
+for (const file of staticFiles) {
   const fileRoute = file.slice(`${Deno.cwd()}/static`.length+1)
-  return router.addRoute(
+
+  // derive mime type
+  let contentType = "application/octet-stream"; // fallback
+  if (fileRoute.endsWith(".js")) {
+    contentType = "application/javascript";
+  } else if (fileRoute.endsWith(".svg")) {
+    contentType = "image/svg+xml";
+  } else if (fileRoute.endsWith(".jpg") || fileRoute.endsWith(".jpeg")) {
+    contentType = "image/jpeg";
+  } else if (fileRoute.endsWith(".png")) {
+    contentType = "image/png";
+  } else if (fileRoute.endsWith(".css")) {
+    contentType = "text/css";
+  }
+
+  router.GET(
     `/${fileRoute}`, 
-    prod ? Peko.cacher(cache) : [], 
-    Peko.staticHandler(new URL(`./static/${fileRoute}`, import.meta.url))
+    (prod ? [Peko.cache()] : []) as Peko.Middleware[], 
+    await Peko.file(
+      new URL(`./static/${fileRoute}`, import.meta.url),
+      {
+        headers: new Headers({
+          "Content-Type": contentType
+        })
+      }
+    )
   )
-})
+}

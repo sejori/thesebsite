@@ -6,7 +6,6 @@ const localCheatCodes =
   (localStorage.getItem("cheatCodes") === "true" || cheatParam === "true") 
   && cheatParam !== "false"
 
-
 const cre8panes = cube => [
   cre8("div", { className: "pane cube-top-pane" }, cube),
   cre8("div", { className: "pane cube-left-pane" }, cube),
@@ -37,24 +36,60 @@ const displayShortcuts = (b) => {
     : shortcuts.style.display = "none"
 }
 
+const createTunnelBackground = (parentElement) => {
+  const tunnelScene = cre8('div', { className: 'tunnel-scene' });
+  const tunnelInner = cre8('div', { className: 'tunnel-inner' });
+  
+  const walls = [
+    cre8('div', { className: 'grid-wall grid-wall-back' }),
+    cre8('div', { className: 'grid-wall grid-wall-floor' }),
+    cre8('div', { className: 'grid-wall grid-wall-left' }),
+    cre8('div', { className: 'grid-wall grid-wall-right' }),
+    cre8('div', { className: 'grid-wall grid-wall-ceiling' })
+  ];
+  
+  walls.forEach(wall => tunnelInner.appendChild(wall));
+  tunnelScene.appendChild(tunnelInner);
+  parentElement.appendChild(tunnelScene);
+
+  return tunnelScene;
+};
+
+const removeTunnelBackground = (parentElement) => {
+  const tunnelScene = parentElement.querySelector('.tunnel-scene');
+  if (tunnelScene) {
+    parentElement.removeChild(tunnelScene);
+  }
+};
+
 const setupNavCube = async (cube, cells, cellData, cellOrder) => {
   localStorage.setItem("cheatCodes", localCheatCodes)
 
   // only trigger resize once - ignored on homescreen bc conditions
   let small = true;
+  let tunnelElement = null;
 
   const enlargeCube = () => {
     small = false
     displayShortcuts(true)
-    cube.parentElement.style.height = "100vh";
-    cube.parentElement.style.width = "100vw";
+    cube.parentElement.style.height = "100vh"
+    cube.parentElement.style.width = "100vw"
+    
+    if (!tunnelElement) {
+      tunnelElement = createTunnelBackground(cube.parentElement)
+    }
   }
 
   const shrinkCube = () => {
     small = true 
     displayShortcuts(false)
-    cube.parentElement.style.height = "5rem";
-    cube.parentElement.style.width = "5rem";   
+    cube.parentElement.style.height = "5rem"
+    cube.parentElement.style.width = "5rem"
+    
+    if (tunnelElement) {
+      removeTunnelBackground(cube.parentElement)
+      tunnelElement = null
+    }
   }
   
   // add onclick listener to cells

@@ -1,9 +1,8 @@
 {
   "tasks": {
-    "start": "deno run --allow-net --allow-read --allow-env --unstable server.ts",
-    "start:dev": "deno run --allow-net --allow-read --allow-env --unstable --watch server.ts"
+    "start": "deno run --allow-net --allow-read --allow-env deno.ts",
+    "start:dev": "deno run --allow-net --allow-read --allow-env --watch deno.ts"
   },
-  "importMap": "import_map.json",
   "fmt": {
     "options": {
       "useTabs": true,
@@ -12,5 +11,6 @@
       "singleQuote": false,
       "proseWrap": "preserve"
     }
-  }
+  },
+  "importMap": "import_map.json"
 }

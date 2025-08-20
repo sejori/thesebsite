@@ -115,19 +115,19 @@ const cellCodes = [
     name: "completed",
     code: [
       [
-        1, 0, 1,
+        0, 1, 0,
+        1, 1, 1,
+        0, 1, 0,
+      ],
+      [
+        0, 1, 0,
+        0, 1, 0,
         0, 0, 0,
-        1, 0, 1,
       ],
       [
-        1, 0, 1,
-        1, 0, 1,
-        1, 1, 1,
-      ],
-      [
-        1, 0, 1,
-        1, 0, 1,
-        1, 1, 1,
+        0, 1, 0,
+        0, 1, 0,
+        0, 0, 0,
       ]
     ],
     action: () => window.location.href = "/blog/completed?cheatCodes=true"
