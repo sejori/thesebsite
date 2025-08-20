@@ -21,7 +21,6 @@ const throttleEvent = (func, wait) => {
   let result;
   let lastCalledTime = 0;
   return function (e) {
-    console.log("hello?")
     if (Date.now() - lastCalledTime > wait) {
       result = func(e);
       lastCalledTime = Date.now();

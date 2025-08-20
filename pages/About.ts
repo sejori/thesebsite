@@ -9,9 +9,10 @@ const About = () => html`
     desc="Thanks for taking the time to stop by my website - reach out if you would like to talk tech!"
   />
   <body>
-    <${Header} showCube=true />
+    <${Header} />
     
-    <section id="about" class="container column align-center">
+    <main id="about" class="container column align-center">
+      <a id="scrolly" href="#about">👇</a>
       <img class="profile-pic align-self-center border-large" src="/images/profile_pic.jpg" alt="Seb" />
       <div class="row justify-center">
         <a href="mailto:seb@sejori.net"><img class="icon" src="/icons/gmail.svg" alt="email" /></a>
@@ -32,7 +33,7 @@ const About = () => html`
       <p>
         <b>Hint:</b> my purple cubic house has a white door on the left and a window on the right. I usually leave the window shut but when looking for secrets I tend to open it...
       </p>
-    </section>
+    </main>
 
     <${Footer} />
   </body>

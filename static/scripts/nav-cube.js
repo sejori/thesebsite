@@ -1,4 +1,4 @@
-import { cre8, throttleEvent } from './utils.js'
+import { cre8 } from './utils.js'
 import { cellCodes } from './cell-codes.js'
 
 const cheatParam = new URLSearchParams(window.location.search).get("cheatCodes")
@@ -27,70 +27,81 @@ const cre8cells = panes => {
   return cells
 }
 
-const displayShortcuts = (b) => {
-  const shortcuts = document.querySelector("#nav-cube-shortcuts")
-  if (!localCheatCodes) return shortcuts.style.display = "none"
+const setupShortcuts = (b) => {
+  const shortcuts = document.querySelectorAll(".shortcut-label")
+  if (!localCheatCodes) return shortcuts.forEach(s => s.style.display = "none")
 
   return b 
-    ? shortcuts.style.display = "flex"
-    : shortcuts.style.display = "none"
+    ? shortcuts.forEach(s => s.style.display = "block")
+    : shortcuts.forEach(s => s.style.display = "none")
 }
+setupShortcuts(localCheatCodes)
 
-const createTunnelBackground = (parentElement) => {
-  const tunnelScene = cre8('div', { className: 'tunnel-scene' });
-  const tunnelInner = cre8('div', { className: 'tunnel-inner' });
+// const createTunnelBackground = (parentElement) => {
+//   const tunnelScene = cre8('div', { className: 'tunnel-scene' });
+//   const tunnelInner = cre8('div', { className: 'tunnel-inner' });
   
-  const walls = [
-    cre8('div', { className: 'grid-wall grid-wall-back' }),
-    cre8('div', { className: 'grid-wall grid-wall-floor' }),
-    cre8('div', { className: 'grid-wall grid-wall-left' }),
-    cre8('div', { className: 'grid-wall grid-wall-right' }),
-    cre8('div', { className: 'grid-wall grid-wall-ceiling' })
-  ];
+//   const walls = [
+//     cre8('div', { className: 'grid-wall grid-wall-back' }),
+//     cre8('div', { className: 'grid-wall grid-wall-floor' }),
+//     cre8('div', { className: 'grid-wall grid-wall-left' }),
+//     cre8('div', { className: 'grid-wall grid-wall-right' }),
+//     cre8('div', { className: 'grid-wall grid-wall-ceiling' })
+//   ];
   
-  walls.forEach(wall => tunnelInner.appendChild(wall));
-  tunnelScene.appendChild(tunnelInner);
-  parentElement.appendChild(tunnelScene);
+//   walls.forEach(wall => tunnelInner.appendChild(wall));
+//   tunnelScene.appendChild(tunnelInner);
+//   parentElement.appendChild(tunnelScene);
 
-  return tunnelScene;
-};
+//   return tunnelScene;
+// };
 
-const removeTunnelBackground = (parentElement) => {
-  const tunnelScene = parentElement.querySelector('.tunnel-scene');
-  if (tunnelScene) {
-    parentElement.removeChild(tunnelScene);
-  }
-};
+// const removeTunnelBackground = (parentElement) => {
+//   const tunnelScene = parentElement.querySelector('.tunnel-scene');
+//   if (tunnelScene) {
+//     parentElement.removeChild(tunnelScene);
+//   }
+// };
 
+// let smallCube = false;
 const setupNavCube = async (cube, cells, cellData, cellOrder) => {
   localStorage.setItem("cheatCodes", localCheatCodes)
 
   // only trigger resize once - ignored on homescreen bc conditions
-  let small = true;
-  let tunnelElement = null;
+  // let tunnelElement = null;
 
-  const enlargeCube = () => {
-    small = false
-    displayShortcuts(true)
-    cube.parentElement.style.height = "100vh"
-    cube.parentElement.style.width = "100vw"
+  // const enlargeCube = () => {
+  //   smallCube = false
+  //   displayShortcuts(true)
+  //   cube.parentElement.style.height = "100vh"
+  //   cube.parentElement.style.width = "100vw"
+  //   cube.style.width = "var(--cube-size)"
+  //   cube.style.height = "var(--cube-size)"
+  //   topP.style.transform = "translateZ(var(--half-size))"
+  //   leftP.style.transform = "rotateX(-90deg) translateZ(var(--half-size))"
+  //   rightP.style.transform = "rotateY(90deg) translateZ(var(--half-size))"
     
-    if (!tunnelElement) {
-      tunnelElement = createTunnelBackground(cube.parentElement)
-    }
-  }
+  //   if (!tunnelElement) {
+  //     tunnelElement = createTunnelBackground(cube.parentElement)
+  //   }
+  // }
 
-  const shrinkCube = () => {
-    small = true 
-    displayShortcuts(false)
-    cube.parentElement.style.height = "5rem"
-    cube.parentElement.style.width = "5rem"
+  // const shrinkCube = () => {
+  //   smallCube = true 
+  //   displayShortcuts(false)
+  //   cube.parentElement.style.height = "5rem"
+  //   cube.parentElement.style.width = "5rem"
+  //   cube.style.width = "3rem"
+  //   cube.style.height = "3rem"
+  //   topP.style.transform = "translateZ(1.5rem)"
+  //   leftP.style.transform = "rotateX(-90deg) translateZ(1.5rem)"
+  //   rightP.style.transform = "rotateY(90deg) translateZ(1.5rem)"
     
-    if (tunnelElement) {
-      removeTunnelBackground(cube.parentElement)
-      tunnelElement = null
-    }
-  }
+  //   if (tunnelElement) {
+  //     removeTunnelBackground(cube.parentElement)
+  //     tunnelElement = null
+  //   }
+  // }
   
   // add onclick listener to cells
   cells.forEach((pane, i) => pane.forEach((cell, ii) => cell.onclick = () => {
@@ -99,21 +110,38 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
       className === "highlighted" ? cellData[i][ii] = 1 : cellData[i][ii] = 0
     })
     
-    // fullscreen cube on subpages
-    if (window.location.pathname !== "/" && small) enlargeCube()
+    // enlarge cube on homepage
+    // if (window.location.pathname !== "/" && smallCube) enlargeCube()
     checkCells(cube, cellData, cellCodes)
   }))
   
-  // scroll to expand & shrink cube on subpages
-  if (window.location.pathname !== "/") {
-    document.addEventListener('scroll', throttleEvent(function() {
-      if (window.scrollY === 0 && small) enlargeCube()
-      else if (!small) shrinkCube()
-    }, 10));
-  } else {
-    displayShortcuts(true)
-  }
+  // // scroll to expand & shrink cube on subpages
+  // if (window.location.pathname !== "/") {
+  //   // shrink immediately on subpages
+  //   shrinkCube()
+
+  //   document.addEventListener('scroll', throttleEvent(function() {
+  //     if (window.scrollY === 0 && smallCube) enlargeCube()
+  //     else if (!smallCube) shrinkCube()
+  //   }, 10));
+  // } else {
+  //   displayShortcuts(true)
+  // }
   
+  // // scrolly toggle
+  const scrolly = document.querySelector("#scrolly")
+  if (window.location.pathname !== "/") scrolly.click()
+  // const toggleScrolly = () => {
+  //   if (smallCube) {
+  //     scrolly.textContent = "☝️" 
+  //     enlargeCube()
+  //   } else {
+  //     scrolly.textContent = "👇"
+  //     shrinkCube()
+  //   }
+  // }
+  // scrolly.addEventListener("click", toggleScrolly)
+
   // roll starting cells
   for (let i = 0; i < cellOrder.length; i++) {
     await new Promise(res => setTimeout(res, 150))
@@ -126,6 +154,7 @@ const setupNavCube = async (cube, cells, cellData, cellOrder) => {
       cube.className = "wobble"
     }
   }
+
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
@@ -155,14 +184,15 @@ const openingCellOrder = [
   [1, 0],
   [1, 1],
   [1, 2],
+  [2, 6],
+  [2, 3],
   [2, 0],
   [2, 1],
   [2, 2],
   [2, 5],
   [2, 8],
-  [2, 7],
-  [2, 6],
   [1, 8],
   [1, 7]
 ]
+await new Promise(res => setTimeout(res, 800))
 setupNavCube(cube, cells, cellData, openingCellOrder)

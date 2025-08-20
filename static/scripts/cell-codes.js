@@ -1,5 +1,3 @@
-import { cre8, cre8modal } from './utils.js'
-
 const cellCodes = [
   {
     name: "Home",
@@ -16,8 +14,8 @@ const cellCodes = [
       ],
       [
         1, 1, 1,
-        0, 0, 1,
-        1, 1, 1,
+        1, 0, 1,
+        1, 0, 1,
       ]
     ],
     action: () => window.location.href = "/", 
@@ -37,16 +35,11 @@ const cellCodes = [
       ],
       [
         1, 1, 1,
-        0, 0, 1,
-        1, 1, 1,
+        1, 0, 1,
+        1, 0, 1,
       ]
     ],
-    action: () => {
-      const modal = cre8modal()
-      cre8("h2", { textContent: "The GameCube!" }, modal)
-      cre8("p", { textContent: "Ah the nostalgia... games and websites were my inspiration to start learning to code. It's been a long journey since then and I've grown a lot along the way." }, modal)
-      cre8("p", { textContent: "The technical world is a deep one full of great people and great ideas but remember not to get deluded by the promise of effortless riches." }, modal)
-    }, 
+  action: () => alert("BING! Easter egg alert \n\n🐤 🐰 🐥 🎁 🌈 🦋 🥚\n\nRemember the GameCube? Ah the nostalgia..."), 
   },
   {
     name: "about",
@@ -62,9 +55,9 @@ const cellCodes = [
         1, 1, 1,
       ],
       [
-        0, 0, 1,
-        0, 0, 1,
         1, 1, 1,
+        0, 0, 1,
+        0, 0, 1,
       ]
     ],
     action: () => window.location.href = "/about"
@@ -105,8 +98,8 @@ const cellCodes = [
       ],
       [
         0, 0, 0,
-        1, 1, 0,
-        0, 0, 0,
+        0, 1, 0,
+        0, 1, 0,
       ]
     ],
     action: () => window.location.href = "/blog/web-tech"
@@ -125,8 +118,8 @@ const cellCodes = [
         0, 0, 0,
       ],
       [
-        0, 1, 0,
-        0, 1, 0,
+        0, 0, 0,
+        1, 1, 0,
         0, 0, 0,
       ]
     ],

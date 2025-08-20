@@ -9,24 +9,10 @@ const Index = () => html`
     desc="Welcome to The Sebsite. Navigate by inputting codes into the magical NavCube. Can you solve it?"
   />
   <body>
-    <${Header} showCube=false />
-    
-    <section id="landing" class="full-height column justify-center">
-      <div class="tunnel-scene">
-        <div class="tunnel-inner">
-          <div class="grid-wall grid-wall-back"></div>
-          <div class="grid-wall grid-wall-floor"></div>
-          <div class="grid-wall grid-wall-left"></div>
-          <div class="grid-wall grid-wall-right"></div>
-          <div class="grid-wall grid-wall-ceiling"></div>
-        </div>
-      </div>
-
-      <div id="nav-cube" class="elastic-spin bounce-in" data-tilt data-tilt-scale="1.12" data-tilt-reverse="true"></div>
-    </div>
+    <${Header}/>
     
     <section id="guide" class="column align-center bg-secondary">
-      <a id="scrolly" href="#guide" class="didot">?</a>
+      <a id="scrolly" href="#guide">👇</a>
       <div class="container">
         <h1>NavCube Cheatsheet</h1>
         <p>Input codes into the magical NavCube by clicking/tapping the tiles.</p>

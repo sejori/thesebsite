@@ -35,7 +35,8 @@ const articles = await recursiveReaddir(fromFileUrl(new URL("./articles", import
 router.GET("/blog", Peko.ssr(() => {
   return blogHTML.replace(
     /(?<=<main(.)*>)(.|\n)*?(?=<\/main>)/,
-    `<h1>Writings and musings:</h1>
+    `<a id="scrolly" href="#blog" class="didot">👇</a>
+    <h1>Writings and musings:</h1>
     <ul class="article-list">
       ${articles.filter(path => !path.includes("completed.md")).map(path => {
         const name = path.slice(`${Deno.cwd()}/articles`.length+1).slice(0, -3)
@@ -58,7 +59,9 @@ articles.forEach(async (file) => {
     (prod ? [Peko.cache()] : []) as Peko.Middleware[], 
     Peko.ssr(() => blogHTML.replace(
       /(?<=<main(.)*>)(.|\n)*?(?=<\/main>)/,
-      marky(articleMD)
+      `<a id="scrolly" href="#blog" class="didot">👇</a>
+      ${marky(articleMD)}
+      `
     ))
   )
 })

@@ -11,7 +11,8 @@ const Blog = () => html`
   <body>
     <${Header} showCube=true />
     
-    <main class="container column align-center"></main>
+    <main id="blog" class="container column align-center">
+    </main>
 
     <${Footer} />
   </body>
