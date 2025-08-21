@@ -1,3 +1,5 @@
+import { resetCells } from "./nav-cube.js"
+
 const cellCodes = [
   {
     name: "Home",
@@ -124,6 +126,27 @@ const cellCodes = [
       ]
     ],
     action: () => window.location.href = "/blog/completed?cheatCodes=true"
+  },
+  {
+    name: "reset",
+    code: [
+      [
+        1, 1, 1,
+        1, 1, 1,
+        1, 1, 1,
+      ],
+      [
+        1, 1, 1,
+        1, 1, 1,
+        1, 1, 1,
+      ],
+      [
+        1, 1, 1,
+        1, 1, 1,
+        1, 1, 1,
+      ]
+    ],
+    action: () => resetCells()
   },
 ]
 

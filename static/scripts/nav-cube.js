@@ -172,6 +172,17 @@ const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => 
   }    
 })
 
+export const resetCells = () => {
+  for (let i=0; i<cells.length; i++) {
+    const pane = cells[i];
+    for (let j=0; j<pane.length; j++) {
+      const cell = pane[j];
+      cell.classList.toggle("highlighted")
+      cellData[i][j] = 0
+    }
+  }
+}
+
 const cube = document.querySelector("#nav-cube")
 const panes = cre8panes(cube)
 const cells = cre8cells(panes)
