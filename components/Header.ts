@@ -34,7 +34,41 @@ const Header = () => html`
         </div>
       </div>
 
-      <div id="nav-cube" class="elastic-spin bounce-in" data-tilt data-tilt-scale="1.12"></div>
+      <div id="nav-cube" class="bounce-in" data-tilt data-tilt-scale="1.12">
+        <div class="pane cube-top-pane">
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+        </div>
+        <div class="pane cube-left-pane">
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+        </div>
+        <div class="pane cube-right-pane">
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+        </div>
+      </div>
     </div>
   </header>
 `

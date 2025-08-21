@@ -1,4 +1,4 @@
-import { cre8 } from './utils.js'
+// import { cre8 } from './utils.js'
 import { cellCodes } from './cell-codes.js'
 
 const cheatParam = new URLSearchParams(window.location.search).get("cheatCodes")
@@ -6,26 +6,26 @@ const localCheatCodes =
   (localStorage.getItem("cheatCodes") === "true" || cheatParam === "true") 
   && cheatParam !== "false"
 
-const cre8panes = cube => [
-  cre8("div", { className: "pane cube-top-pane" }, cube),
-  cre8("div", { className: "pane cube-left-pane" }, cube),
-  cre8("div", { className: "pane cube-right-pane" }, cube)
-]
+// const cre8panes = cube => [
+//   cre8("div", { className: "pane cube-top-pane" }, cube),
+//   cre8("div", { className: "pane cube-left-pane" }, cube),
+//   cre8("div", { className: "pane cube-right-pane" }, cube)
+// ]
 
-const cre8cells = panes => {
-  const cells = [ [], [], [] ]
-  for (let i = 0; i < 27; i++) {
-    if (i < 9) {
-      cells[0].push(cre8("span", { className: "cell" }, panes[0]))
-    } else if (i < 18) {
-      cells[1].push(cre8("span", { className: "cell" }, panes[1])) 
-    } else {
-      cells[2].push(cre8("span", { className: "cell" }, panes[2])) 
-    }
-  }
+// const cre8cells = panes => {
+//   const cells = [ [], [], [] ]
+//   for (let i = 0; i < 27; i++) {
+//     if (i < 9) {
+//       cells[0].push(cre8("span", { className: "cell" }, panes[0]))
+//     } else if (i < 18) {
+//       cells[1].push(cre8("span", { className: "cell" }, panes[1])) 
+//     } else {
+//       cells[2].push(cre8("span", { className: "cell" }, panes[2])) 
+//     }
+//   }
   
-  return cells
-}
+//   return cells
+// }
 
 const setupShortcuts = (b) => {
   const shortcuts = document.querySelectorAll(".shortcut-label")
@@ -64,7 +64,8 @@ setupShortcuts(localCheatCodes)
 // };
 
 // let smallCube = false;
-const setupNavCube = async (cube, cells, cellData, cellOrder) => {
+const setupNavCube = async (cube, panes, cellData, cellOrder) => {
+  const cells = Array.from(panes).map(pane => Array.from(pane.children))
   localStorage.setItem("cheatCodes", localCheatCodes)
 
   // only trigger resize once - ignored on homescreen bc conditions
@@ -184,9 +185,14 @@ export const resetCells = () => {
 }
 
 const cube = document.querySelector("#nav-cube")
-const panes = cre8panes(cube)
-const cells = cre8cells(panes)
-const cellData = cells.map(pane => pane.map(() => 0))
+const panes = document.querySelectorAll(".pane")
+const cells = document.querySelectorAll(".cell")
+const cellData = []
+panes.forEach(pane => {
+  const paneData = []
+  cellData.push(paneData)
+  Array.from(pane.children).forEach(() => paneData.push(0))
+})
 const openingCellOrder = [ 
   [0, 1],
   [0, 0],
@@ -206,4 +212,4 @@ const openingCellOrder = [
   [1, 7]
 ]
 await new Promise(res => setTimeout(res, 800))
-setupNavCube(cube, cells, cellData, openingCellOrder)
+setupNavCube(cube, panes, cellData, openingCellOrder)

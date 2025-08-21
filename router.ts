@@ -29,7 +29,7 @@ router.GET(
 )
 
 
-const blogHTML = await renderToString(html`<${Blog} />` as any)
+const blogHTML = renderToString(html`<${Blog} />` as any)
 const articles = await recursiveReaddir(fromFileUrl(new URL("./articles", import.meta.url)))
 
 router.GET("/blog", Peko.ssr(() => {
