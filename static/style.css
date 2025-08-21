@@ -27,7 +27,7 @@ html, body {
   flex-direction: column; 
   scroll-behavior: smooth; 
 }
-h1 { font-family: Didot, serif; color: var(--purple); font-weight: 400; }
+h1 { font-family: "Rubik Broken Fax", system-ui, monospace; color: var(--purple); font-weight: 400; }
 h2, h3, h4 { color: var(--neonblue); font-weight: 400; }
 p { color: var(--smoke); font-weight: 300; font-size: 1.2rem; align-self: flex-start; }
 a { color: var(--neonpink); }
@@ -48,7 +48,7 @@ footer { z-index: 1; padding: 1rem; background-color: var(--carbon); }
 .fullscreen { position: absolute; top: 0; left: 0; min-height: 100vh; min-width: 100vw; }
 .full-height { min-height: 100vh; }
 .fill-width { width: 100%; }
-.container { margin: auto; padding: 2rem; max-width: 900px; width: 100%; margin-bottom: 2rem; }
+.container { margin: auto; padding: 2rem; max-width: 900px; width: 100%; margin-bottom: 2rem; box-sizing: border-box; }
 .column { display: flex; flex-direction: column; }
 .row { display: flex; }
 .wrap { flex-wrap: wrap; }
@@ -66,7 +66,8 @@ footer { z-index: 1; padding: 1rem; background-color: var(--carbon); }
 }
 .shortcut-label { 
   text-decoration: none;
-  font-size: 1rem; 
+  font-family: "Rubik Broken Fax", system-ui;
+  font-size: 1.2rem; 
   background-color: var(--coal);
   border-radius: 0.2rem;
   color: var(--neonpink);

@@ -34,7 +34,7 @@ const Header = () => html`
         </div>
       </div>
 
-      <div id="nav-cube" class="elastic-spin bounce-in" data-tilt data-tilt-scale="1.12" data-tilt-reverse="true"></div>
+      <div id="nav-cube" class="elastic-spin bounce-in" data-tilt data-tilt-scale="1.12"></div>
     </div>
   </header>
 `

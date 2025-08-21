@@ -11,6 +11,9 @@ const Head = ({ title, desc, style }: Record<string, string>) => html`
     <meta name="description" content="${desc}" />
     
     <!-- import the webpage's stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
     
     <!-- import the webpage's javascript -->
