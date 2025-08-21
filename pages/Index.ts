@@ -5,8 +5,8 @@ import Footer from "../components/Footer.ts"
 
 const Index = () => html`
   <${Head} 
-    title="The Sebsite" 
-    desc="Welcome to The Sebsite. Navigate by inputting codes into the magical NavCube. Can you solve it?"
+    title="Sejori.net" 
+    desc="Welcome to Sejori's website. Navigate by inputting codes into the magical NavCube. Can you solve it?"
   />
   <body>
     <${Header}/>

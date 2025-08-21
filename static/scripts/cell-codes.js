@@ -1,27 +1,27 @@
 import { resetCells } from "./nav-cube.js"
 
 const cellCodes = [
-  {
-    name: "Home",
-    code: [
-      [
-        1, 1, 0,
-        1, 0, 0,
-        1, 0, 1,
-      ],
-      [
-        1, 1, 1,
-        0, 0, 0,
-        0, 1, 1,
-      ],
-      [
-        1, 1, 1,
-        1, 0, 1,
-        1, 0, 1,
-      ]
-    ],
-    action: () => window.location.href = "/", 
-  },
+  // {
+  //   name: "Home",
+  //   code: [
+  //     [
+  //       1, 1, 0,
+  //       1, 0, 0,
+  //       1, 0, 1,
+  //     ],
+  //     [
+  //       1, 1, 1,
+  //       0, 0, 0,
+  //       0, 1, 1,
+  //     ],
+  //     [
+  //       1, 1, 1,
+  //       1, 0, 1,
+  //       1, 0, 1,
+  //     ]
+  //   ],
+  //   action: () => window.location.href != "/" ? window.location.href = "/" : null, 
+  // },
   {
     name: "GameCube",
     code: [

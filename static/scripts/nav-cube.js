@@ -163,10 +163,10 @@ const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => 
   if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
     if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
       if (cellData[2].every((cell, i) => cell === cellCode.code[2][i])) {
-        cube.classList.toggle("bounce-in")
+        cube.classList.toggle("wobble")
         new Promise(res => setTimeout(res, 500)).then(() => {
           cellCode.action()
-          cube.classList.toggle("bounce-in")
+          cube.classList.toggle("wobble")
         })
       }
     }
@@ -174,13 +174,11 @@ const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => 
 })
 
 export const resetCells = () => {
-  for (let i=0; i<cells.length; i++) {
-    const pane = cells[i];
-    for (let j=0; j<pane.length; j++) {
-      const cell = pane[j];
+  const cellArray = Array.from(cells);
+  for (let i=0; i<cellArray.length; i++) {
+      const cell = cellArray[i];
       cell.classList.toggle("highlighted")
-      cellData[i][j] = 0
-    }
+      cellData[i > 9 ? 0 : i > 18 ? 1 : 2][i%9] = 0
   }
 }
 

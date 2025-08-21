@@ -5,7 +5,7 @@ import Footer from "../components/Footer.ts"
 
 const Blog = () => html`
   <${Head} 
-    title="The Sebsite | About" 
+    title="Sejori.net | Blog" 
     desc="Thanks for taking the time to stop by my website - reach out if you would like to talk tech!"
   />
   <body>

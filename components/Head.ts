@@ -7,7 +7,7 @@ const Head = ({ title, desc, style }: Record<string, string>) => html`
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>${title}</title>
-    <link rel="icon" type="image/png" href="/images/ss_code_home.png" />
+    <link rel="icon" type="image/png" href="/images/nav_cube_mini.png" />
     <meta name="description" content="${desc}" />
     
     <!-- import the webpage's stylesheet -->
