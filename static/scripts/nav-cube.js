@@ -159,6 +159,7 @@ const setupNavCube = async (cube, panes, cellData, cellOrder) => {
 }
 
 const checkCells = (cube, cellData, cellCodes) => cellCodes.forEach(cellCode => {
+  console.log(cellData)
   // first make sure top matches then do left then right
   if (cellData[0].every((cell, i) => cell === cellCode.code[0][i])) {
     if (cellData[1].every((cell, i) => cell === cellCode.code[1][i])) {
